@@ -1,0 +1,19 @@
+# Robots.txt for CubaControl S.A.
+
+User-agent: *
+Allow: /
+
+# Disallow admin/login pages
+Disallow: /login
+Disallow: /forgot-password
+Disallow: /verify-pending
+Disallow: /loading
+
+# Allow API endpoints if needed
+Allow: /api/
+
+# Sitemap
+Sitemap: https://cubacontrol-sa.web.app/sitemap.xml
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1

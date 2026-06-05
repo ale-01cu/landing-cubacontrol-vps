@@ -1,0 +1,665 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "bulletins": "Boletines",
+    "news": "Noticias",
+    "services": "Servicios",
+    "about": "¿Quiénes Somos?",
+    "contact": "Contáctenos"
+  },
+  "newsletters": {
+    "title": "Boletines",
+    "download": "Descargar",
+    "downloadAll": "Descargar todos",
+    "empty": "No hay boletines disponibles",
+    "description": "Acceda a nuestros boletines informativos.",
+    "subscribedTitle": "¡Suscrito a los boletines!",
+    "subscribedDescription": "Ya puedes descargar todos los boletines desde la sección de boletines.",
+    "subscribeSuccess": "¡Suscripción exitosa! Ya puedes descargar boletines.",
+    "subscribeError": "Error al suscribirte. Inténtalo de nuevo.",
+    "subscribeRequired": "Necesitas suscribirte para descargar boletines",
+    "loginRequired": "Inicia sesión para descargar boletines",
+    "downloadError": "Error al descargar el archivo",
+    "loginToSubscribe": "Inicia sesión para suscribirte a nuestros boletines y acceder a las descargas."
+  },
+  "form": {
+    "service": {
+      "request": {
+        "title": "Solicitud de Servicio",
+        "infoEmail": "Usaremos este correo solo para responder su petición",
+        "input": {
+          "service": {
+            "label": "Servicio Seleccionado"
+          },
+          "text": {
+            "label": "Texto",
+            "placeholder": "Escriba aquí su comentario o sugerencia..."
+          }
+        },
+        "success-message": "{'¡'}Correo enviado con éxito{'!'}",
+        "error-message": "Error{'¡'}. Revise los campos y reintente{'.'}"
+      }
+    },
+    "button": {
+      "send": "Enviar",
+      "clean": "Limpiar",
+      "cancel": "Cancelar"
+    },
+    "input": {
+      "email": {
+        "label": "Correo",
+        "placeholder": "correo{'@'}empresa.com"
+      }
+    }
+  },
+  "landing": {
+    "hero": {
+      "headline": "Servicios Internacionales de Supervisión",
+      "title": "CubaControl S.A.",
+      "description": "Sociedad Mercantil de capital 100% cubano con 8 Unidades Empresariales de Base, organizadas mediante Oficinas de Venta y Grupos de Trabajo.",
+      "links": {
+        "request": "Solicitar",
+        "services": "Servicios"
+      }
+    },
+    "essence": {
+      "title": "Nuestra Esencia Empresarial",
+      "description": "Comprometidos con la excelencia, la transparencia y el desarrollo sostenible mediante servicios especializados de Supervisión Comercial.",
+      "mission": {
+        "title": "Misión",
+        "content": "Brindar los servicios especializados de Supervisión Comercial, que permita incrementar las operaciones seguras en el comercio exterior cubano mediante el desarrollo de un Sistema Integrado de Gestión, brindando, seguridad, imparcialidad y confianza a nuestros clientes con excelencia en el servicio y una experiencia de más de MEDIO SIGLO."
+      },
+      "vision": {
+        "title": "Visión",
+        "content": "Organización líder en los servicios especializados como tercero independiente, que marcan ventaja competitiva en el mercado de la Supervisión Comercial, con un sistema integrado de gestión con elevada seguridad y altos índices de calidad percibida por nuestras partes interesadas."
+      }
+    },
+    "services": {
+      "title": "Nuestros Servicios",
+      "description": "Soluciones especializadas diseñadas para garantizar calidad, transparencia y seguridad en operaciones comerciales y empresariales.",
+      "items": [
+        {
+          "title": "Servicios a empresas del seguro",
+          "description": "Evaluaciones técnicas, inspecciones y peritajes especializados que respaldan procesos de aseguramiento, reclamaciones y gestión de riesgos."
+        },
+        {
+          "title": "Supervisión comercial de mercancías",
+          "description": "Inspección y verificación de mercancías durante procesos de importación, exportación y comercialización, garantizando cumplimiento normativo y calidad comercial."
+        },
+        {
+          "title": "Servicios de análisis de laboratorio",
+          "description": "Análisis técnicos y pruebas especializadas para evaluar la calidad, composición y conformidad de productos según estándares nacionales e internacionales."
+        },
+        {
+          "title": "Trámites aduanales",
+          "description": "Gestión y asesoría integral en procesos aduaneros, facilitando operaciones de comercio exterior con eficiencia, transparencia y cumplimiento legal."
+        },
+        {
+          "title": "Auditorías de empresas",
+          "description": "Auditorías operativas y comerciales orientadas a verificar procesos, controles internos y cumplimiento de normativas aplicables."
+        },
+        {
+          "title": "Servicios de investigación inteligente",
+          "description": "Investigación y análisis estratégico mediante técnicas avanzadas de recopilación y evaluación de información para la toma de decisiones empresariales."
+        }
+      ],
+      "link": {
+        "label": "Solicitar Servicio"
+      }
+    },
+    "benefits": {
+      "title": "Importancia de la Supervisión Comercial en Origen-Destino",
+      "description": "",
+      "items": [
+        {
+          "title": "Prevención y reducción de riesgos",
+          "description": "Constituye una acción preventiva que disminuye riesgos económicos para empresas y el país, al detectar de forma anticipada diferencias respecto a las condiciones contractuales establecidas."
+        },
+        {
+          "title": "Control de parámetros y especificaciones",
+          "description": "Identifica desviaciones en los parámetros y especificaciones de las mercancías mediante información en tiempo real sobre las condiciones operativas durante el proceso de entrega."
+        },
+        {
+          "title": "Evaluación de embalaje y transporte",
+          "description": "Alerta sobre deficiencias en embalajes, manipulación, estiba y medios de transporte, contribuyendo a reducir pérdidas económicas ocasionadas por averías."
+        },
+        {
+          "title": "Detección integral de incidencias",
+          "description": "Detecta faltantes, sobrantes, averías y problemas de calidad tanto en origen como durante el traslado hacia destino, garantizando resultados comparables dentro del alcance de supervisión Origen-Destino."
+        }
+      ]
+    },
+    "supervision": {
+      "title": "¿Qué es la Supervisión Comercial? ",
+      "description": " La Supervisión Comercial o peritaje mercantil es el proceso mediante el cual se inspeccionan las mercancías y los medios con los que estas interactúan durante sus diferentes movimientos, incluyendo transporte terrestre, marítimo y aéreo, contenedores, fábricas y almacenes.",
+      "description1": "Este servicio es realizado por agencias internacionales certificadas o acreditadas que actúan como terceros independientes, conforme a lo acordado entre compradores y vendedores en contratos internacionales.",
+      "note": " A diferencia del Control de Calidad, que se realiza durante el proceso de fabricación por el productor, la Supervisión Comercial se aplica a mercancías listas para su embarque, verificando que cumplan las condiciones pactadas antes de su envío.",
+      "objective": {
+        "title": "Objetivo de la Supervisión Comercial ",
+        "description": "Comprobar y verificar mediante observación visual, conteo, medición, toma de muestras y análisis de laboratorio que las mercancías son entregadas conforme a los parámetros y especificaciones establecidos en los contratos de compra-venta internacional, asegurando además que los medios utilizados para su traslado o conservación cumplen con lo stipulado."
+      }
+    },
+    "laboratorio": {
+      "headline": "Unidad de Servicios",
+      "title": "Laboratorio de Supervisión de la Calidad",
+      "description": "El Laboratorio de Supervisión de Calidad CUBACONTROL S.A. es una unidad independiente especializada en el análisis de calidad de mercancías de importación y exportación. Realiza ensayos físicoquímicos, microbiológicos y sensoriales siguiendo normas cubanas e internacionales vigentes.",
+      "button": "Solicitar servicio",
+      "areasTitle": "Áreas de Ensayos",
+      "areas": [
+        {
+          "title": "Fertilizantes"
+        },
+        {
+          "title": "Frutas, Vegetales y Conservas"
+        },
+        {
+          "title": "Lácteos, Aceites y Grasas"
+        },
+        {
+          "title": "Harinas y Granos"
+        },
+        {
+          "title": "Bebidas"
+        },
+        {
+          "title": "Mieles"
+        },
+        {
+          "title": "Azúcar"
+        },
+        {
+          "title": "Microbiología y Sensorial"
+        }
+      ],
+      "certHeadline": "Certificaciones",
+      "certTitle": "Equipos y Certificaciones",
+      "certDescription": "El laboratorio cuenta con equipos que cumplen las especificaciones de la norma NC ISO/IEC 17025:2017. Dispone de Espectroscopía Infrarrojo Cercano (NIR FOSS) para ensayos físicoquímicos y posee licencia ambiental para actividades con riesgos biológicos y manejo de desechos peligrosos.",
+      "certifications": [
+        "NC ISO/IEC 17025:2017",
+        "Resolución No. 143/25 (Licencia Ambiental)",
+        "Nivel de Seguridad II (Microbiología)"
+      ],
+      "galleryHeadline": "Galería",
+      "galleryTitle": "Instalaciones y Equipos"
+    },
+    "partners": {
+      "title": "Partners Internacionales",
+      "description": "Ofrecemos nuestros servicios especializados de Supervisión Comercial en Cuba y en el Extranjero, representando o haciéndonos representar por firmas de igual nomenclatura de renombre Internacional, lo cual ha permitido desarrollar y proteger el comercio exterior cubano y ofrecer garantías a los suministradores y clientes extranjeros, así como a los importadores y exportadores nacionales."
+    },
+    "seguros": {
+      "headline": "Agente de Seguros",
+      "title": "SIS CUBACONTROL S.A",
+      "intro": "Entidad autorizada por la Superintendencia de Seguros para vender seguros personales y de empresas.",
+      "button": "Solicitar cotización",
+      "typesTitle": "Tipos de Seguros",
+      "types": [
+        {
+          "title": "Seguro de Vida",
+          "description": "Dirigido a personas naturales cubanas o extranjeras residentes. Su propósito es proteger la economía familiar ante el fallecimiento del asegurado por cualquier causa. Incluye incapacidad temporal, gastos farmacéuticos y funerales."
+        },
+        {
+          "title": "Seguro de Viaje",
+          "description": "Protección integral para viajes al exterior. Cubre cancelación, retrasos, pérdida de equipaje y asistencia médica durante el viaje."
+        },
+        {
+          "title": "Seguro Automotor",
+          "description": "Seguro voluntario para vehículos de motor. Cobertura básica de daños materiales con opciones a todo riesgo, incendio, rayo y explosivos."
+        },
+        {
+          "title": "Responsabilidad Civil",
+          "description": "Ampara conductores profesionales, servicio de carga y transporte de pasajeros. Incluye seguro obligatorio para choferes profesionales."
+        },
+        {
+          "title": "Seguro de Incendio",
+          "description": "Protege inmuebles y contenido contra incendio, rayo y explosión. Condiciones especiales para viviendas."
+        },
+        {
+          "title": "Bienes Agrícolas",
+          "description": "Para campesinos y Cooperativas. Ampara cultivos contra ciclones, inundaciones, sequías, plagas y enfermedades."
+        },
+        {
+          "title": "Bienes Pecuarios",
+          "description": "Ampara animales contra muerte y pérdida de capacidad. Cubre riesgos climatológicos y enfermedades."
+        }
+      ]
+    },
+    "trust": {
+      "title": "Confianza total de principio a fin",
+      "description": "Trabajamos con base a la calidad y confiabilidad en cada proceso de supervisión comercial."
+    },
+    "news": {
+      "title": "Noticias Recientes",
+      "description": "Actualidad y actividades más relevantes de nuestra gestión empresarial.",
+      "actions": {
+        "read-more": "leer más",
+        "more-news": "más noticias"
+      }
+    },
+    "subscription": {
+      "title": "Suscríbase a nuestro Boletín",
+      "description": "Reciba información especializada, novedades del sector y actualizaciones sobre supervisión comercial y logística internacional.",
+      "input": {
+        "placeholder": "correo{'@'}empresa.com"
+      },
+      "actions": {
+        "submit": {
+          "label": "Subscribirse"
+        }
+      },
+      "note": "No enviamos spam. Puede cancelar su suscripción en cualquier momento."
+    }
+  },
+  "about-us": {
+    "title": "CUBACONTROL S.A.",
+    "description": "",
+    "history": {
+      "p1": {
+        "title": "Una Empresa con Autonomía y Responsabilidad Estatal",
+        "description": "La Sociedad Mercantil Servicios Internacionales de Supervisión CUBACONTROL S.A., tiene gestión económica, financiera, organizativa, técnica, productiva, comercial, laboral y contractual con autonomía controlada en cumplimiento de lo establecido por el Gobierno y el Estado."
+      },
+      "p2": {
+        "title": "Origen y Formalización Jurídica",
+        "description": "La Empresa CUBACONTROL, fue fundada el 4 de septiembre de 1961 como una de las nacientes empresas del Ministerio de Comercio Exterior, con el objetivo de llevar a cabo las actividades de la supervisión comercial. Es inscripta como Sociedad Mercantil cubana, bajo el nombre de Servicios Internacionales de Supervisión CUBACONTROL S.A. en el libro 161, Folio 05, Hoja 1632, Sección Segunda, Inscripción 1era del Registro Central de Compañías Anónimas; y en el Folio 05, Hoja 6714 del Libro 669 del Registro Mercantil Segundo de la Habana, manteniendo de forma ininterrumpida las actividades de la Empresa CUBACONTROL."
+      },
+      "p3": {
+        "title": "Transformación Organizacional",
+        "description": "A través del certificado emitido por el Secretario del Consejo de Ministros y de su Comité Ejecutivo, de fecha 27 de septiembre del 2004, se notificó el acuerdo del Comité Ejecutivo del Consejo de Ministros por el cual se aprobó, que la Empresa S.I.S. CUBACONTROL S.A., del Ministerio del Comercio Exterior, comience la aplicación del Perfeccionamiento Empresarial. A partir del 8 de julio 2015 se inserta en el OSDE CAUDAL, según RS-5366 y 8158."
+      },
+      "p4": {
+        "title": "Reconocimiento y Certificación Internacional",
+        "description": "Es una Agencia Internacional certificada y acreditada, acorde a los requisitos de la NC-ISO 9001:2015, que brinda servicios de supervisión comercial, mediante la inspección de las mercancías y los medios con que esta toma contacto en sus diferentes etapas, desde el almacén de origen hasta el primer almacén mayorista en el destino final, incluyendo los diferentes tipos y medios de transporte (terrestre, marítimo, aéreo, contenedores, en fábricas, en almacenes, etc.).",
+        "p2": "Desde su creación hasta el año 2016, la Empresa S.I.S. CUBACONTROL estuvo subordinada al Ministerio de Comercio Exterior (MINCEX), pasando en ese mismo año a integrar la Organización Superior de Dirección, OSDE, CAUDAL. S.A.",
+        "p3": "La Empresa S.I.S.  CUBACONTROL S.A., por el impacto social que tienen sus servicios, está diseñada para generar un mínimo de utilidad en su gestión, y como principio nunca operará con pérdidas."
+      }
+    },
+    "units": {
+      "title": "Unidades Empresariales de Base",
+      "description": "Los procesos que garantizan la ejecución de la producción de bienes y servicios se organizan en Unidades Empresariales de Base (UEB), dirigidas por un Director responsable de su gestión operativa y administrativa.",
+      "items": {
+        "external_services": {
+          "name": "Servicios en el Exterior",
+          "description": "Organiza y controla la ejecución de los servicios de supervisión internacional fuera de Cuba y coordina con los agentes y oficinas de S.I.S. CUBACONTROL en el exterior."
+        },
+        "occidente": {
+          "name": "Occidente",
+          "description": "Es la mayor UEB de la empresa. Tiene sede en La Habana y oficinas en Pinar del Río y Mariel, además de inspectores en la Isla de la Juventud y grupos de trabajo en distintas localidades."
+        },
+        "laboratorio": {
+          "name": "Laboratorio",
+          "description": "Es una Agencia Internacional certificada y acreditada, acorde a los requisitos de la NC-ISO 9001:2015. Recibe muestras del proceso de supervisión y realiza evaluaciones organolépticas, fisicoquímicas y microbiológicas."
+        },
+        "matanzas": {
+          "name": "Matanzas",
+          "description": "Con sede en Matanzas y oficina en Cárdenas, ejecuta actividades principales y secundarias de la empresa con volúmenes de ventas anuales cercanos al millón de pesos."
+        },
+        "cienfuegos": {
+          "name": "Cienfuegos",
+          "description": "Opera en Cienfuegos, Villa Clara y Sancti Spíritus. Posee oficinas en estas provincias y en Casilda, Trinidad."
+        },
+        "nuevitas": {
+          "name": "Nuevitas",
+          "description": "Con sede en Nuevitas, desarrolla actividades empresariales en las provincias de Camagüey y Ciego de Ávila."
+        },
+        "holguin": {
+          "name": "Holguín",
+          "description": "Cubre Holguín, Moa y Las Tunas con oficinas en Puerto de Felton, Puerto Carúpano y Guayabal."
+        },
+        "santiago": {
+          "name": "Santiago de Cuba",
+          "description": "Opera en Santiago de Cuba, Granma y Guantánamo, con oficinas en Bayamo, Manzanillo y la ciudad de Guantánamo."
+        }
+      }
+    },
+    "contact": {
+      "office": {
+        "title": "Oficina Central",
+        "description": "Puede visitarnos o contactarnos directamente en nuestra sede principal.",
+        "address": {
+          "label": "Dirección",
+          "value": "Calle Conill # 580 e/ Calle 26 y Conill B, Nuevo Vedado, Municipio Plaza de la Revolución, La Habana, Cuba."
+        },
+        "schedule": {
+          "label": "Horario",
+          "value": "Lunes a jueves · 8:00 a.m. – 5:30 p.m.. Viernes · 8:00 a.m. – 4:30 p.m."
+        },
+        "email": {
+          "label": "Correo electrónico",
+          "value": "comunicate{'@'}cubacontrol.com.cu"
+        },
+        "fixphone": {
+          "label": "Teléfono Fijo",
+          "value": "07 855 5720"
+        },
+        "phones": [
+          {
+            "label": "Director General",
+            "value": "63455394"
+          },
+          {
+            "label": "Directora de Operaciones",
+            "value": "52158993"
+          },
+          {
+            "label": "Directora de Desarrollo",
+            "value": "59961945"
+          },
+          {
+            "label": "Director UEB Servicios en el Exterior",
+            "value": "52131388"
+          },
+          {
+            "label": "Especialista Principal Dirección de Desarrollo",
+            "value": "59997893"
+          },
+          {
+            "label": "Especialista Comercial Dirección de Desarrollo",
+            "value": "63404562"
+          }
+        ]
+      }
+    }
+  },
+  "services": {
+    "title": "Servicios",
+    "description": "Servicios especializados para la supervisión y control de operaciones logísticas y manejo de mercancías.",
+    "supervision": {
+      "title": "Servicios de Supervisión como tercero independiente en Origen-Destino",
+      "items": [
+        "Cantidad y/o calidad",
+        "Embalaje",
+        "Peso y medida",
+        "Averías",
+        "Estiba y/o desestiba",
+        "Limpieza de bodegas y/o tanques",
+        "Apertura, llenado y sellado de contenedores",
+        "Toma de muestras según normas o criterios establecidos",
+        "Temperatura y canales de ventilación en el buque",
+        "Puesta en marcha y pruebas de funcionamiento de equipos en supervisiones técnicas",
+        "Peso por inmersión de buques (Draft Survey)",
+        "Ullage (volumen y peso para cargas líquidas)",
+        "Verificación de existencias",
+        "Supervisión del proceso de fumigación de mercancías"
+      ]
+    },
+    "customs": {
+      "title": "Servicios Aduanales",
+      "description": "Gestión integral de trámites aduaneros orientados a facilitar el despacho de mercancías, garantizando el cumplimiento de las regulaciones vigentes y la eficiencia en los procesos de importación y exportación.",
+      "items": [
+        "Presentación de la declaración de mercancías",
+        "Obtención del levante y habilitación"
+      ],
+      "appliesToTitle": "Servicios aplicables a mercancías tales como:",
+      "appliesTo": [
+        "Productos alimenticios frescos, congelados y en conserva",
+        "Combustibles y lubricantes",
+        "Azúcar, mieles y alcoholes",
+        "Materias primas y productos intermedios",
+        "Cítricos",
+        "Bebidas y licores",
+        "Productos químicos",
+        "Fertilizantes",
+        "Equipos y maquinarias",
+        "Plantas completas",
+        "Productos textiles y talabartería",
+        "Minerales"
+      ]
+    },
+    "laboratory": {
+      "title": "Servicios Independientes de Laboratorio",
+      "description": "Servicios especializados de análisis de calidad para mercancías de importación y exportación mediante ensayos fisicoquímicos, microbiológicos y sensoriales, respaldados por un Sistema de Gestión de Calidad certificado y acreditado según la norma NC ISO/IEC 17025 por el ONARC. El laboratorio cuenta con licencias de seguridad biológica y ambiental, así como equipamiento tecnológico avanzado para garantizar resultados confiables y conformes a estándares nacionales e internacionales.",
+      "capabilitiesTitle": "Capacidades y recursos principales:",
+      "capabilities": [
+        "Espectrofotómetro en Infrarrojo Cercano",
+        "Espectrofotómetro de Absorción Atómica",
+        "Cromatógrafo Líquido de Alta Resolución (HPLC)",
+        "Determinadores rápidos de análisis",
+        "Campanas de extracción de gases",
+        "Flujos laminares y cabinas de bioseguridad",
+        "Reactivos y equipamiento especializado"
+      ],
+      "areasTitle": "Áreas técnicas principales:",
+      "areas": [
+        "Área de Alimentos: aceites, grasas, lácteos, carnes, frutas, vegetales, harinas, granos, especias, evaluación sensorial y microbiología",
+        "Área Química: productos químicos, fertilizantes, bebidas, miel de abejas, azúcar y análisis de metales mediante cromatografía líquida y espectrometría de absorción atómica"
+      ]
+    },
+    "insurance": {
+      "title": "Servicios a Empresas del Seguro e Investigación Inteligente",
+      "description": "Servicios especializados de inspección, tasación y certificación orientados al sector asegurador, así como investigaciones técnicas y comerciales para la verificación documental, evaluación de riesgos y validación de proveedores, contribuyendo a la transparencia y seguridad en operaciones comerciales y procesos de reclamación.",
+      "insuranceServicesTitle": "Servicios para empresas del seguro:",
+      "insuranceServices": [
+        "Inspección, tasación y certificación de ajuste de averías",
+        "Investigación documental en procesos de concertación de pólizas",
+        "Investigación documental en procesos de reclamaciones",
+        "Revisión y verificación de carteras de asegurados",
+        "Certificación de coincidencia entre documentación contractual y registros existentes",
+        "Identificación y notificación de incidencias detectadas"
+      ],
+      "intelligenceTitle": "Servicios de investigación inteligente:",
+      "intelligence": [
+        "Verificación de existencia legal y operativa de proveedores",
+        "Validación de registros mercantiles y documentación tributaria",
+        "Revisión de certificaciones y avales técnicos o de calidad",
+        "Inspección presencial de instalaciones y capacidades operativas",
+        "Evaluación de infraestructura, seguridad y control de acceso",
+        "Análisis organizacional y presencia de personal especializado"
+      ],
+      "evaluationTitle": "Evaluación de proveedores:",
+      "evaluationDescription": "Auditoría y análisis integral de socios comerciales o proveedores potenciales para reducir riesgos operativos y aportar información estratégica que facilite la toma de decisiones empresariales.",
+      "insuranceDetails": [
+        {
+          "title": "Seguro de Vida",
+          "descriptions": [
+            "Dirigido a personas naturales cubanas o extranjeras residentes permanentes en el territorio nacional, que cumplan los requisitos de asegurabilidad y sus edades oscilen entre 18 y 77 años.",
+            " Su principal propósito es atenuar la inseguridad financiera resultante de la muerte del asegurado por cualquier causa, garantizando así la protección a la economía de su familia.",
+            " Adicionalmente se cubre la incapacidad temporal provocada por accidentes, enfermedades cardiovasculares, vasculares encefálicas e intervenciones quirúrgicas de urgencia; la incapacidad permanente total o parcial consecuencia de los eventos antes enunciados, más las causadas por el cáncer y la diabetes, los gastos farmacéuticos en los que incurre el asegurado para restablecerse de los efectos de los riesgos cubiertos en la póliza y gastos funerales en los que incurran los familiares. Puede contratarse en las siguientes modalidades: individual, colectiva y colectiva optativa."
+          ]
+        },
+        {
+          "title": "Seguro de Viaje hacia el exterior",
+          "descriptions": [
+            "Este producto está diseñado para los ciudadanos cubanos y extranjeros residentes permanentes en el país, que viajen al exterior. Con el seguro de viajes hacia el exterior garantizamos la cobertura de los siguientes riesgos: gastos médicos, repatriación y/o transporte de enfermos o fallecidos, responsabilidad civil, anticipo de fianza judicial, asistencia por pérdidas de documentos o equipaje, así como la transmisión de mensajes urgentes. Su vigencia se corresponde con el período de duración del viaje."
+          ]
+        },
+        {
+          "title": "Seguro Automotor",
+          "descriptions": [
+            "Pone a su disposición un seguro de carácter voluntario orientado a resarcir los daños causados a vehículos de motor, asegurables de transporte terrestre, sin distinción de marca, modelo o año de fabricación. La cobertura básica es la de Daños Materiales, debiendo contratar el cliente al menos uno de los siguientes riesgos: incendio, rayo, explosión, choque o vuelco, transporte o cubierta comprensiva.",
+            "Puede contratarlo cualquier persona natural cubana, extranjera o sin ciudadanía, residente en el territorio nacional en cualquiera de sus tres modalidades: una en base a indemnización, otra que considera indemnización y reposición del bien siniestrado y una última a todo riesgo."
+          ]
+        },
+        {
+          "title": "Seguro Responsabilidad Civil",
+          "descriptions": [
+            "Este producto ampara cinco Condiciones Especiales de Responsabilidad Civil: para poseedores de Licencia de Conducción; para el servicio automotor de carga por carretera; para el servicio de transporte de pasajeros por carretera; para el servicio de transporte en medios autopropulsados o de tracción animal; y la Responsabilidad Civil Obligatoria para Conductores Profesionales, legislada por el Decreto-Ley 11/2020, con carácter obligatorio para todos los choferes profesionales.",
+            "Estas coberturas protegen al asegurado frente a la responsabilidad civil que le sea impuesta mediante sentencia firme, derivada de la muerte o lesiones causadas a terceras personas, así como de los daños, pérdida o deterioro de bienes ajenos ocasionados con un vehículo al conducirlo por la vía pública o durante la prestación del servicio de transporte."
+          ]
+        },
+        {
+          "title": "Seguro Incendio",
+          "descriptions": [
+            "Este producto a los clientes que deseen proteger sus inmuebles {'('}edificaciones e instalaciones{')'} y el contenido de los mismos {'('}mobiliario, maquinarias, equipos, utensilios, enseres y otros bienes existentes{')'}, contra los daños o pérdidas materiales que pueden sufrir como consecuencia de un incendio, rayo o explosión y otras coberturas adicionales. Para quienes deseen asegurar su vivienda, se establecen condiciones especiales en la póliza. Puede ser contratado por todas las personas naturales o extranjeras residentes."
+          ]
+        },
+        {
+          "title": "Seguro Bienes Agrícolas",
+          "descriptions": [
+            "Que puede ser contratado por campesinos individuales y Cooperativas de Créditos y Servicios {'('}CSS{')'}, que ampara los daños o perdidas de cultivos de ciclo corto, largo o permanente, con sus costos o rendimientos esperados; a consecuencia de riesgos como: ciclones, fuertes vientos, inundaciones, lluvias intensas, exceso de humedad, granizo, sequía, incendio, deslizamiento del terreno, plagas y enfermedades, entre otros.",
+            " La contratación de un seguro de bienes agrícolas, es una manera efectiva de minimizar las consecuencias negativas de estos eventos, garantizando su tranquilidad financiera y la continuidad de sus labores productivas."
+          ]
+        },
+        {
+          "title": "Seguro Bienes Pecuarios",
+          "descriptions": [
+            "Ampara la muerte y sacrificio de animales, así como la pérdida de su capacidad para cumplir el propósito a que estuvieran destinados. Este producto cubre las consecuencias negativas de riesgos climatológicos, enfermedades y accidentes que sufren los animales objetos del contrato de seguro. De igual forma se cubre: asfixia, parto patológico, timpanismo y complicaciones operatorias y postoperatorias, siempre que dichas intervenciones hayan sido realizadas por personal veterinario. Puede ser contratado por campesinos individuales y Cooperativas de Créditos y Servicios {'('}CSS{')'}."
+          ]
+        }
+      ]
+    },
+    "warehouse-management": {
+      "title": "Servicios de Gestión y Supervisión de Almacenes",
+      "description": "Servicio especializado en la supervisión y evaluación integral de almacenes y centros logísticos, orientado al control cualitativo y cuantitativo de las mercancías y al cumplimiento de los parámetros técnicos, constructivos, organizativos y de seguridad. Incluye la supervisión de almacenamiento climatizado, procesos logísticos, protección de instalaciones y asesoría técnica para la obtención de categorías oficiales de almacenes.",
+      "items": [
+        "Supervisión de existencias en fábricas y almacenes",
+        "Evaluación técnica y operativa de instalaciones logísticas",
+        "Supervisión de requisitos constructivos y organizativos",
+        "Control de almacenamiento climatizado",
+        "Evaluación de seguridad y protección",
+        "Asesoría para obtención de categoría de almacenes"
+      ],
+      "courseTitle": "Capacitación sobre Logística de Almacenes",
+      "courses": [
+        "Cursos concebidos como un programa didáctico, basados esencialmente en las normas obligatorias del reglamento existente.",
+        "Los cursistas alcanzarán su máximo nivel, acerca de las actividades y operaciones logísticas de almacenes de las entidades que operan en la economía del país."
+      ]
+    },
+    "insurance-agent": {
+      "title": "Servicios como Agente de Seguro",
+      "description": "Servicio autorizado por la Superintendencia de Seguros que permite a SIS Cubacontrol S.A actuar como agente para la comercialización de seguros personales y empresariales, ofreciendo soluciones integrales de protección que incluyen seguros de vida, viaje, automotor, responsabilidad civil, incendio y coberturas para bienes agrícolas y pecuarios.",
+      "items": [
+        "Venta de seguros personales",
+        "Seguro de vida",
+        "Seguro de viaje internacional",
+        "Seguro automotor",
+        "Responsabilidad civil",
+        "Seguro contra incendios",
+        "Cobertura para bienes agrícolas",
+        "Cobertura para bienes pecuarios"
+      ],
+      "action": {
+        "download-file": {
+          "label": "Más información sobre el servicio"
+        }
+      }
+    }
+  },
+  "incidents": {
+    "title": "Incidencias",
+    "description": "Irregularidades y situaciones detectadas durante las supervisiones de cadena de suministro, tránsito, almacenamiento de mercancías y control de operaciones logísticas."
+  },
+  "auth": {
+    "login": {
+      "title": "Iniciar sesión",
+      "description": "Bienvenido de nuevo, introduce tus credenciales",
+      "google": "Continuar con Google",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "correo{'@'}ejemplo.com",
+      "password": "Contraseña",
+      "passwordPlaceholder": "Contraseña...",
+      "remember": "Recordar",
+      "submit": "Entrar",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "noAccount": "¿No tienes cuenta?",
+      "registerLink": "Crear cuenta",
+      "formDescription": "Ingresa tus credenciales para acceder a tu cuenta.",
+      "providers": "Proveedores"
+    },
+    "loginFailed": {
+      "title": "Error al iniciar sesión",
+      "description": "Las credenciales son incorrectas. Inténtalo de nuevo."
+    },
+    "forgotPassword": {
+      "title": "Recuperar contraseña",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "correo{'@'}ejemplo.com",
+      "submit": "Enviar enlace",
+      "success": "Revisa tu correo para instrucciones.",
+      "error": "Error al enviar el correo."
+    },
+    "register": {
+      "title": "Crear cuenta",
+      "description": "Regístrate para acceder a la plataforma",
+      "name": "Nombre completo",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "correo{'@'}ejemplo.com",
+      "password": "Contraseña",
+      "passwordPlaceholder": "••••••••",
+      "confirmPassword": "Confirmar contraseña",
+      "submit": "Registrarse",
+      "haveAccount": "¿Ya tienes cuenta?",
+      "loginLink": "Inicia sesión",
+      "firstName": "Nombre",
+      "firstNamePlaceholder": "Tu nombre",
+      "lastName": "Apellidos",
+      "lastNamePlaceholder": "Tu apellido",
+      "minPassword": "Mínimo 8 caracteres",
+      "continueWith": "Continuar con:",
+      "success": {
+        "title": "Registro exitoso",
+        "description": "Hemos enviado un email de verificación a tu correo"
+      },
+      "errors": {
+        "passwordRequired": "La contraseña es requerida",
+        "passwordMinLength": "La contraseña debe tener al menos 8 caracteres",
+        "passwordUppercase": "La contraseña debe tener al menos una mayúscula",
+        "passwordNumber": "La contraseña debe tener al menos un número",
+        "confirmPasswordRequired": "Por favor confirma tu contraseña",
+        "passwordsDoNotMatch": "Las contraseñas no coinciden",
+        "invalidName": "Solo se permiten letras y espacios"
+      },
+      "confirmPassword": "Confirmar contraseña",
+      "confirmPasswordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "required": "Este campo es obligatorio",
+      "email": "Correo inválido",
+      "minPassword": "La contraseña debe tener al menos 8 caracteres",
+      "passwordMatch": "Las contraseñas no coinciden",
+      "emailRequired": "El correo es obligatorio",
+      "emailMin": "Debe tener al menos 4 caracteres",
+      "passwordRequired": "La contraseña es obligatoria"
+    }
+  },
+  "profile": {
+    "title": "Mi Perfil",
+    "description": "Gestioná tu información personal y configuración de cuenta",
+    "edit": {
+      "title": "Editar Perfil",
+      "description": "Actualizá tu información personal",
+      "firstName": "Nombre",
+      "firstNamePlaceholder": "Tu nombre",
+      "lastName": "Apellidos",
+      "lastNamePlaceholder": "Tus apellidos",
+      "username": "Nombre de usuario",
+      "usernamePlaceholder": "Tu nombre de usuario",
+      "submit": "Guardar cambios",
+      "success": "Perfil actualizado correctamente",
+      "error": "Error al actualizar el perfil"
+    },
+    "password": {
+      "title": "Cambiar Contraseña",
+      "description": "Actualizá tu contraseña de acceso",
+      "current": "Contraseña actual",
+      "currentPlaceholder": "Ingresá tu contraseña actual",
+      "new": "Nueva contraseña",
+      "newPlaceholder": "Ingresá tu nueva contraseña",
+      "confirm": "Confirmar nueva contraseña",
+      "confirmPlaceholder": "Repetí la nueva contraseña",
+      "submit": "Actualizar contraseña",
+      "success": "Contraseña actualizada correctamente",
+      "error": "Error al actualizar la contraseña"
+    },
+    "info": {
+      "title": "Información de la Cuenta",
+      "email": "Correo electrónico",
+      "group": "Grupo",
+      "created": "Miembro desde",
+      "updated": "Última actualización"
+    },
+    "verified": "Verificado",
+    "unverified": "No verificado",
+    "avatar": {
+      "tooltip": "Cambiar foto de perfil",
+      "success": "Foto de perfil actualizada",
+      "error": "Error al actualizar la foto"
+    }
+  },
+  "chat": {
+    "supportTitle": "Soporte en línea",
+    "supportAgent": "Soporte",
+    "placeholder": "Escribe tu mensaje aquí...",
+    "loginRequiredTitle": "Identificación requerida",
+    "loginRequired": "Debes iniciar sesión con tu cuenta para poder comunicarte con nuestro equipo de soporte.",
+    "loginButton": "Ir a Iniciar sesión"
+  }
+}

@@ -1,0 +1,41 @@
+# Dependencies
+node_modules
+
+# Build outputs
+.output
+.nuxt
+dist
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Testing
+coverage
+.nyc_output
+
+# Docs
+*.md
+!README.md
+
+# Git
+.git
+.gitignore
+
+# Misc
+.DS_Store
+Thumbs.db
+*.bak
+*.tmp

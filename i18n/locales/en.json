@@ -1,0 +1,671 @@
+{
+  "navigation": {
+    "home": "Home",
+    "bulletins": "Bulletins",
+    "news": "News",
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "newsletters": {
+    "title": "Bulletins",
+    "download": "Download",
+    "downloadAll": "Download all",
+    "empty": "No bulletins available",
+    "description": "Access our informative bulletins.",
+    "subscribedTitle": "Subscribed to bulletins!",
+    "subscribedDescription": "You can now download all bulletins from the bulletins section.",
+    "subscribeSuccess": "Subscription successful! You can now download bulletins.",
+    "subscribeError": "Error subscribing. Please try again.",
+    "subscribeRequired": "You need a subscription to download bulletins",
+    "loginRequired": "Sign in to download bulletins",
+    "downloadError": "Error downloading the file",
+    "loginToSubscribe": "Sign in to subscribe to our bulletins and access downloads."
+  },
+  "form": {
+    "service": {
+      "request": {
+        "title": "Service Request",
+        "infoEmail": "We will use this email only to respond to your request",
+        "input": {
+          "service": {
+            "label": "Selected Service"
+          },
+          "text": {
+            "label": "Text",
+            "placeholder": "Write your comment or suggestion here..."
+          }
+        },
+        "success-message": "Mail sent successfully{'!'}",
+        "error-message": "Error{'¡'}. Please review the fields and retry{'.'}"
+      }
+    },
+    "button": {
+      "send": "Send",
+      "clean": "Clean",
+      "cancel": "Cancel"
+    },
+    "input": {
+      "email": {
+        "label": "Email",
+        "placeholder": "email{'@'}company.com"
+      }
+    }
+  },
+  "landing": {
+    "hero": {
+      "headline": "International Supervision Services",
+      "title": "CubaControl S.A.",
+      "description": "A commercial company with 100% Cuban capital and 8 Business Units organized through Sales Offices and Work Groups.",
+      "links": {
+        "request": "Request",
+        "services": "Services"
+      }
+    },
+    "essence": {
+      "title": "Our Corporate Essence",
+      "description": "Committed to excellence, transparency, and sustainable development through specialized Commercial Supervision services.",
+      "mission": {
+        "title": "Mission",
+        "content": "To provide specialized Commercial Supervision services that will increase the security of Cuban foreign trade operations through the development of an Integrated Management System, offering security, impartiality, and confidence to our clients with service excellence and over half a century of experience."
+      },
+      "vision": {
+        "title": "Vision",
+        "content": "A leading organization in specialized services as an independent third party, which provides a competitive advantage in the Commercial Supervision market, with an integrated management system with high security and high levels of quality perceived by our stakeholders."
+      }
+    },
+    "services": {
+      "title": "Our Services",
+      "description": "Specialized solutions designed to ensure quality, transparency, and security in commercial and business operations.",
+      "items": [
+        {
+          "title": "Insurance Company Services",
+          "description": "Technical evaluations, inspections, and specialized assessments supporting insurance processes, claims, and risk management."
+        },
+        {
+          "title": "Commercial Cargo Supervision",
+          "description": "Inspection and verification of goods during import, export, and commercialization processes ensuring regulatory compliance and commercial quality."
+        },
+        {
+          "title": "Laboratory Analysis Services",
+          "description": "Technical analysis and specialized testing to evaluate product quality, composition, and compliance with national and international standards."
+        },
+        {
+          "title": "Customs Procedures",
+          "description": "Comprehensive management and advisory services for customs processes, facilitating foreign trade operations efficiently and legally."
+        },
+        {
+          "title": "Corporate Audits",
+          "description": "Operational and commercial audits aimed at verifying processes, internal controls, and regulatory compliance."
+        },
+        {
+          "title": "Intelligent Research Services",
+          "description": "Strategic research and analysis using advanced information gathering and evaluation techniques for business decision-making."
+        }
+      ],
+      "link": {
+        "label": "Request Service"
+      }
+    },
+    "benefits": {
+      "title": "Importance of Commercial Supervision at Origin-Destination",
+      "description": "",
+      "items": [
+        {
+          "title": "Risk Prevention and Mitigation",
+          "description": "Acts as a preventive measure that reduces economic risks for companies and the country by detecting early discrepancies with respect to established contractual conditions."
+        },
+        {
+          "title": "Monitoring of Parameters and Specifications",
+          "description": "Identifies deviations in goods parameters and specifications through real-time information about operational conditions during the delivery process."
+        },
+        {
+          "title": "Packaging and Transport Evaluation",
+          "description": "Alerts about deficiencies in packaging, handling, stowage, and transportation methods, helping reduce economic losses caused by damages."
+        },
+        {
+          "title": "Comprehensive Incident Detection",
+          "description": "Detects shortages, surpluses, damages, and quality issues both at origin and during transit to destination, ensuring comparable results within the Origin–Destination supervision scope."
+        }
+      ]
+    },
+    "supervision": {
+      "title": "What is Commercial Supervision?",
+      "description": "Commercial Supervision, also known as trade inspection, is the process through which goods and the means interacting with them are inspected throughout their different movements, including land, maritime, and air transportation, as well as containers, factories, and warehouses.",
+      "description1": "This service is carried out by certified or accredited international agencies acting as independent third parties, in accordance with agreements established between buyers and sellers in international contracts.",
+      "note": "Unlike Quality Control, which is performed during the manufacturing process by the producer, Commercial Supervision is applied to goods ready for shipment, verifying that they comply with the agreed conditions prior to dispatch.",
+      "objective": {
+        "title": "Objective of Commercial Supervision",
+        "description": "To verify, through visual inspection, counting, measurement, sampling, and laboratory analysis, that goods are delivered according to the parameters and specifications established in international sales contracts, while also ensuring that the means used for their transport or preservation comply with agreed requirements."
+      }
+    },
+    "laboratorio": {
+      "headline": "Service Unit",
+      "title": "Quality Supervision Laboratory",
+      "description": "CUBACONTROL S.A. Quality Supervision Laboratory is an independent unit specialized in quality analysis of import and export goods. It performs physicochemical, microbiological, and sensory testing following current Cuban and international standards.",
+      "button": "Request service",
+      "areasTitle": "Testing Areas",
+      "areas": [
+        {
+          "title": "Fertilizers"
+        },
+        {
+          "title": "Fruits, Vegetables, and Preserves"
+        },
+        {
+          "title": "Dairy, Oils, and Fats"
+        },
+        {
+          "title": "Flours and Grains"
+        },
+        {
+          "title": "Beverages"
+        },
+        {
+          "title": "Honeys"
+        },
+        {
+          "title": "Sugar"
+        },
+        {
+          "title": "Microbiology and Sensory"
+        }
+      ],
+      "certHeadline": "Certifications",
+      "certTitle": "Equipment and Certifications",
+      "certDescription": "The laboratory has equipment that meets the specifications of NC ISO/IEC 17025:2017. It has Near Infrared Spectroscopy (NIR FOSS) for physicochemical testing and holds an environmental license for activities with biological risks and hazardous waste handling.",
+      "certifications": [
+        "NC ISO/IEC 17025:2017",
+        "Resolution No. 143/25 (Environmental License)",
+        "Security Level II (Microbiology)"
+      ],
+      "galleryHeadline": "Gallery",
+      "galleryTitle": "Facilities and Equipment"
+    },
+    "partners": {
+      "title": "International Partners",
+      "description": "We offer our specialized Commercial Supervision services in Cuba and abroad, representing or being represented by internationally renowned firms, which has allowed us to develop and protect Cuban foreign trade and offer guarantees to foreign suppliers and clients, as well as national importers and exporters."
+    },
+    "seguros": {
+      "headline": "Insurance Agent",
+      "title": "SIS CUBACONTROL S.A",
+      "intro": "Entity authorized by the Superintendent of Insurance to sell personal and business insurance policies.",
+      "button": "Request quote",
+      "typesTitle": "Types of Insurance",
+      "types": [
+        {
+          "title": "Life Insurance",
+          "description": "For Cuban or foreign residents. Protects family finances upon the insured's death. Includes temporary disability, pharmaceutical and funeral expenses."
+        },
+        {
+          "title": "Travel Insurance",
+          "description": "Comprehensive protection for trips abroad. Covers cancellation, delays, baggage loss and medical assistance during travel."
+        },
+        {
+          "title": "Vehicle Insurance",
+          "description": "Voluntary insurance for motor vehicles. Basic material damage coverage with comprehensive, fire and explosion options."
+        },
+        {
+          "title": "Civil Liability",
+          "description": "Covers professional drivers, cargo and passenger transport services. Includes mandatory insurance for professional drivers."
+        },
+        {
+          "title": "Fire Insurance",
+          "description": "Protects buildings and contents against fire, lightning and explosion. Special conditions for homes."
+        },
+        {
+          "title": "Agricultural Assets",
+          "description": "For farmers and Cooperatives. Crops covered against cyclones, floods, droughts, pests and diseases."
+        },
+        {
+          "title": "Livestock",
+          "description": "Covers animals against death and loss of capacity. Covers climatic risks and diseases."
+        }
+      ]
+    },
+    "trust": {
+      "title": "Total trust from start to finish",
+      "description": "We operate based on quality and reliability in every commercial supervision process."
+    },
+    "news": {
+      "title": "Latest News",
+      "description": "Updates and highlights of the most relevant activities of our corporate operations.",
+      "actions": {
+        "read-more": "read more",
+        "more-news": "More news"
+      }
+    },
+    "subscription": {
+      "title": "Subscribe to Our Newsletter",
+      "description": "Receive specialized information, industry updates, and news about commercial supervision and international logistics.",
+      "input": {
+        "placeholder": "email{'@'}company.com"
+      },
+      "actions": {
+        "submit": {
+          "label": "Subscribe"
+        }
+      },
+      "note": "We do not send spam. You can unsubscribe at any time."
+    }
+  },
+  "about-us": {
+    "title": "CUBACONTROL S.A.",
+    "description": "",
+    "history": {
+      "p1": {
+        "title": "A Company with State-Guided Autonomy and Responsibility",
+        "description": "Servicios Internacionales de Supervisión CUBACONTROL S.A. is a mercantile society that operates with controlled autonomy in its economic, financial, organizational, technical, productive, commercial, labor, and contractual management, in full compliance with the regulations established by the Government and the State."
+      },
+      "p2": {
+        "title": "Origins and Legal Incorporation",
+        "description": "CUBACONTROL was founded on September 4, 1961, as one of the pioneering companies under the Ministry of Foreign Trade, tasked with carrying out commercial supervision activities. It was incorporated as a Cuban mercantile society under the name Servicios Internacionales de Supervisión CUBACONTROL S.A. Its registration is recorded in Book 161, Folio 05, Page 1632, Second Section, First Entry of the Central Registry of Corporations; and in Folio 05, Page 6714 of Book 669 of the Second Mercantile Registry of Havana, thus continuing the activities of the original CUBACONTROL company without interruption."
+      },
+      "p3": {
+        "title": "Organizational Transformation",
+        "description": "Through a certificate issued by the Secretary of the Council of Ministers and its Executive Committee, dated September 27, 2004, the agreement of the Executive Committee of the Council of Ministers was notified, approving that the company S.I.S. CUBACONTROL S.A., from the Ministry of Foreign Trade, begin the implementation of Business Improvement. Effective July 8, 2015, it became part of the OSDE CAUDAL, as per RS-5366 and 8158."
+      },
+      "p4": {
+        "title": "International Recognition and Certification",
+        "description": "It is a certified and accredited International Agency, operating in accordance with the requirements of NC-ISO 9001:2015, providing commercial supervision services through the inspection of goods and of the means with which they come into contact throughout their different stages—from the warehouse of origin to the first wholesale warehouse at the final destination. This supervision includes the various types and modes of transportation involved, such as land, maritime, and air transport, as well as containers, factories, warehouses, and other related environments. From its establishment until 2016, S.I.S. CUBACONTROL S.A. operated under the authority of the Ministry of Foreign Trade (MINCEX). In that same year, it became part of the Higher Organization of Business Management (OSDE) CAUDAL S.A. Due to the social impact of the services it provides, S.I.S. CUBACONTROL S.A. is structured to generate a minimum level of profit in its operations and, as a fundamental principle, will never operate at a loss."
+      }
+    },
+    "units": {
+      "title": "Business Base Units",
+      "description": "The processes that ensure the execution of goods and service production are organized into Business Base Units (UEB), each led by a Director responsible for operational and administrative management.",
+      "items": {
+        "external_services": {
+          "name": "Overseas Services",
+          "description": "Responsible for organizing and supervising international inspection services outside Cuba, coordinating operations with S.I.S. CUBACONTROL agents and overseas offices."
+        },
+        "occidente": {
+          "name": "Western Region",
+          "description": "The company’s largest business unit, headquartered in Havana with regional offices in Pinar del Río and Mariel, supported by inspectors in Isla de la Juventud and operational teams across multiple locations."
+        },
+        "laboratorio": {
+          "name": "Laboratory",
+          "description": "Operates accredited testing services recognized by ONARC, performing organoleptic, physicochemical, and microbiological analyses on samples collected during inspection processes."
+        },
+        "matanzas": {
+          "name": "Matanzas",
+          "description": "Headquartered in Matanzas with an additional office in Cárdenas, executing core and complementary business activities with annual sales volumes approaching one million pesos."
+        },
+        "cienfuegos": {
+          "name": "Cienfuegos",
+          "description": "Provides operational coverage across Cienfuegos, Villa Clara, and Sancti Spíritus, with offices located throughout these provinces including Casilda, Trinidad."
+        },
+        "nuevitas": {
+          "name": "Nuevitas",
+          "description": "Based in Nuevitas, delivering company services across the provinces of Camagüey and Ciego de Ávila."
+        },
+        "holguin": {
+          "name": "Holguín",
+          "description": "Covers Holguín and Las Tunas provinces, operating offices in Puerto de Felton, Puerto Carúpano, and Guayabal."
+        },
+        "santiago": {
+          "name": "Santiago de Cuba",
+          "description": "Responsible for operations across Santiago de Cuba, Granma, and Guantánamo, with offices in Bayamo, Manzanillo, and Guantánamo city."
+        },
+        "moa": {
+          "name": "Moa",
+          "description": "Focuses primarily on services related to the nickel industry in the municipality of Moa, operating within major industrial plants and local port facilities."
+        }
+      }
+    },
+    "contact": {
+      "office": {
+        "title": "Head Office",
+        "description": "You may visit us or contact us directly at our main headquarters.",
+        "address": {
+          "label": "Address",
+          "value": "580 Conill Street, between 26th Street and Conill B, Nuevo Vedado, Plaza de la Revolución Municipality, Havana, Cuba."
+        },
+        "schedule": {
+          "label": "Business Hours",
+          "value": "Monday to Thursday · 8:00 a.m. – 5:30 p.m. · Friday · 8:00 a.m. – 4:30 p.m."
+        },
+        "email": {
+          "label": "Email",
+          "value": "comunicate{'@'}cubacontrol.com.cu"
+        },
+        "fixphone": {
+          "label": "Landline",
+          "value": "07 855 5720"
+        },
+        "phones": [
+          {
+            "label": "Managing Director",
+            "value": "63455394"
+          },
+          {
+            "label": "Director of Operations",
+            "value": "52158993"
+          },
+          {
+            "label": "Director of Development",
+            "value": "59961945"
+          },
+          {
+            "label": "Director of Overseas Services (UEB)",
+            "value": "52131388"
+          },
+          {
+            "label": "Senior Development Specialist",
+            "value": "59997893"
+          },
+          {
+            "label": "Commercial Development Specialist",
+            "value": "63404562"
+          }
+        ]
+      }
+    }
+  },
+  "services": {
+    "title": "Services",
+    "description": "Specialized services for the supervision, and  control of logistics operations and cargo handling.",
+    "supervision": {
+      "title": "Independent Third-Party Inspection Services at Origin and Destination",
+      "items": [
+        "Quantity and/or quality inspection",
+        "Packaging inspection",
+        "Weight and measurement verification",
+        "Damage assessment",
+        "Loading and unloading supervision",
+        "Cargo hold and tank cleanliness inspection",
+        "Container opening, stuffing, and sealing supervision",
+        "Sampling in accordance with applicable standards or agreed criteria",
+        "Temperature and ventilation monitoring onboard vessels",
+        "Equipment commissioning and operational testing during technical inspections",
+        "Draft Survey (vessel displacement measurement)",
+        "Ullage survey (volume and weight determination for liquid cargo)",
+        "Stock verification",
+        "Supervision of cargo fumigation processes"
+      ]
+    },
+    "customs": {
+      "title": "Customs Services",
+      "description": "Comprehensive customs management services aimed at facilitating cargo clearance while ensuring regulatory compliance and operational efficiency in import and export processes.",
+      "items": [
+        "Submission of cargo customs declarations",
+        "Obtaining cargo release and authorization"
+      ],
+      "appliesToTitle": "Services applicable to goods such as:",
+      "appliesTo": [
+        "Fresh, frozen and processed food products",
+        "Fuels and lubricants",
+        "Sugar, molasses and alcohol products",
+        "Raw materials and intermediate goods",
+        "Citrus products",
+        "Beverages and spirits",
+        "Chemical products",
+        "Fertilizers",
+        "Equipment and machinery",
+        "Complete industrial plants",
+        "Textile and leather goods",
+        "Minerals"
+      ]
+    },
+    "laboratory": {
+      "title": "Independent Laboratory Services",
+      "description": "Specialized quality testing services for import and export goods through physicochemical, microbiological and sensory analyses, supported by a certified Quality Management System accredited under NC ISO/IEC 17025 standards by ONARC. The laboratory holds biological safety and environmental licenses and operates with advanced analytical equipment to ensure reliable results aligned with national and international standards.",
+      "capabilitiesTitle": "Main capabilities and resources:",
+      "capabilities": [
+        "Near Infrared Spectrophotometer",
+        "Atomic Absorption Spectrophotometer",
+        "High Performance Liquid Chromatography (HPLC)",
+        "Rapid analytical testing equipment",
+        "Gas extraction hoods",
+        "Laminar flow systems and biosafety cabinets",
+        "Specialized reagents and laboratory equipment"
+      ],
+      "areasTitle": "Main technical areas:",
+      "areas": [
+        "Food Analysis Area: oils, fats, dairy products, meats, fruits, vegetables, flours, grains, spices, sensory evaluation and microbiology",
+        "Chemical Analysis Area: chemical products, fertilizers, beverages, honey, sugar, and metal analysis using liquid chromatography and atomic absorption spectrometry"
+      ]
+    },
+    "insurance": {
+      "title": "Insurance Support and Business Intelligence Services",
+      "description": "Specialized inspection, loss adjustment certification and verification services for the insurance sector, combined with commercial and technical intelligence solutions aimed at document validation, risk assessment and supplier verification to enhance transparency and operational security.",
+      "insuranceServicesTitle": "Insurance-related services:",
+      "insuranceServices": [
+        "Inspection, appraisal and loss adjustment certification",
+        "Document investigation during insurance policy issuance processes",
+        "Claims documentation investigation and verification",
+        "Policyholder portfolio verification",
+        "Certification of consistency between contractual documents and registered records",
+        "Identification and reporting of detected discrepancies"
+      ],
+      "intelligenceTitle": "Business intelligence services:",
+      "intelligence": [
+        "Verification of supplier legal existence and operational legitimacy",
+        "Validation of commercial registrations and tax documentation",
+        "Review of technical certifications and quality credentials",
+        "On-site inspection of facilities and operational capabilities",
+        "Infrastructure, security and access control assessment",
+        "Organizational and workforce presence analysis"
+      ],
+      "evaluationTitle": "Supplier evaluation:",
+      "evaluationDescription": "Comprehensive auditing and assessment of potential partners or suppliers to minimize operational risks and provide strategic insights supporting informed business decision-making.",
+      "insuranceDetails": [
+        {
+          "title": "Life Insurance",
+          "descriptions": [
+            "Intended for Cuban nationals or foreign nationals with permanent residence in the national territory who meet the insurability requirements and are between 18 and 77 years of age.",
+            "Its main purpose is to mitigate the financial insecurity resulting from the death of the insured from any cause, thereby ensuring protection for the family’s financial stability.",
+            "Additionally, it covers temporary disability caused by accidents, cardiovascular diseases, cerebrovascular diseases, and emergency surgical interventions; permanent total or partial disability resulting from the previously mentioned events, as well as those caused by cancer and diabetes; pharmaceutical expenses incurred by the insured to recover from the effects of the risks covered by the policy; and funeral expenses incurred by family members. It may be contracted under the following modalities: individual, collective, and optional collective."
+          ]
+        },
+        {
+          "title": "Travel Insurance Abroad",
+          "descriptions": [
+            "This product is designed for Cuban citizens and foreign nationals with permanent residence in the country who travel abroad. With travel insurance abroad, we guarantee coverage for the following risks: medical expenses, repatriation and/or transportation of sick or deceased persons, civil liability, advance bail bond, assistance for loss of documents or luggage, as well as the transmission of urgent messages. Its validity corresponds to the duration of the trip."
+          ]
+        },
+        {
+          "title": "Motor Vehicle Insurance",
+          "descriptions": [
+            "Provides a voluntary insurance policy aimed at compensating damages caused to insurable land motor vehicles, regardless of brand, model, or year of manufacture. The basic coverage is Material Damage, and the client must contract at least one of the following risks: fire, lightning, explosion, collision or rollover, transportation, or comprehensive coverage.",
+            "It may be contracted by any Cuban, foreign, or stateless natural person residing in the national territory under any of its three modalities: one based on indemnification, another that considers indemnification and replacement of the damaged asset, and a final all-risk modality."
+          ]
+        },
+        {
+          "title": "Civil Liability Insurance",
+          "descriptions": [
+            "This product covers five Special Civil Liability Conditions: for holders of a Driver’s License; for road freight transport services; for passenger road transport services; for transport services using self-propelled or animal-drawn vehicles; and Mandatory Civil Liability for Professional Drivers, established by Decree-Law 11/2020, which is mandatory for all professional drivers.",
+            "These coverages protect the insured against civil liability imposed by final court judgment arising from death or injury caused to third parties, as well as damage, loss, or deterioration of third-party property caused by a vehicle when driving on public roads or during the provision of transportation services."
+          ]
+        },
+        {
+          "title": "Fire Insurance",
+          "descriptions": [
+            "This product is intended for clients who wish to protect their real estate (buildings and facilities) and their contents (furniture, machinery, equipment, utensils, household items, and other existing assets) against material damage or losses that may occur as a result of fire, lightning, explosion, and other additional coverages. For those wishing to insure their home, special conditions are established in the policy. It may be contracted by all natural persons or foreign residents."
+          ]
+        },
+        {
+          "title": "Agricultural Property Insurance",
+          "descriptions": [
+            "This insurance may be contracted by individual farmers and Credit and Services Cooperatives (CSS), covering damages or losses to short-, medium-, or long-cycle crops, based on their costs or expected yields, as a result of risks such as cyclones, strong winds, floods, heavy rains, excess humidity, hail, drought, fire, landslides, pests, and diseases, among others.",
+            "Contracting agricultural property insurance is an effective way to minimize the negative consequences of these events, ensuring financial peace of mind and the continuity of productive activities."
+          ]
+        },
+        {
+          "title": "Livestock Insurance",
+          "descriptions": [
+            "Covers the death and mandatory slaughter of animals, as well as the loss of their capacity to fulfill the purpose for which they were intended. This product covers the negative consequences of climatic risks, diseases, and accidents affecting animals covered by the insurance contract. It also covers suffocation, pathological birth, bloat, and surgical and post-surgical complications, provided that such procedures have been performed by veterinary personnel. It may be contracted by individual farmers and Credit and Services Cooperatives (CSS)."
+          ]
+        }
+      ]
+    },
+    "warehouse-management": {
+      "title": "Warehouse Management and Supervision Services",
+      "description": "Specialized service focused on the comprehensive supervision and evaluation of warehouses and logistics facilities, ensuring qualitative and quantitative control of goods and compliance with technical, structural, organizational, and safety standards. Includes supervision of climate-controlled storage, logistics processes, facility protection, and technical consulting for warehouse certification and classification.",
+      "items": [
+        "Inventory supervision in factories and warehouses",
+        "Technical and operational evaluation of logistics facilities",
+        "Supervision of structural and organizational requirements",
+        "Climate-controlled storage monitoring",
+        "Safety and protection assessment",
+        "Consulting for warehouse certification"
+      ],
+      "courseTitle": "Capacitación sobre Logística de Almacenes",
+      "courses": [
+        "Cursos concebidos como un programa didáctico, basados esencialmente en las normas obligatorias del reglamento existente.",
+        "Los cursistas alcanzarán su máximo nivel, acerca de las actividades y operaciones logísticas de almacenes de las entidades que operan en la economía del país."
+      ]
+    },
+    "insurance-agent": {
+      "title": "Insurance Agency Services",
+      "description": "Authorized by the Insurance Superintendency, SIS Cubacontrol S.A operates as an insurance agent providing comprehensive personal and corporate insurance solutions, including life, travel, automotive, liability, fire, and coverage for agricultural and livestock assets.",
+      "items": [
+        "Personal insurance sales",
+        "Life insurance",
+        "International travel insurance",
+        "Automotive insurance",
+        "Civil liability insurance",
+        "Fire insurance coverage",
+        "Agricultural asset insurance",
+        "Livestock asset insurance"
+      ],
+      "action": {
+        "download-file": {
+          "label": "More information about the service"
+        }
+      }
+    }
+  },
+  "incidents": {
+    "title": "Incidents",
+    "description": "Irregularities and situations detected during supply chain, transit, cargo storage supervision, and logistics operations control."
+  },
+  "news": {
+    "title": "Noticias",
+    "description": "Actualidad, avisos y novedades"
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in",
+      "description": "Welcome back, enter your credentials",
+      "google": "Continue with Google",
+      "email": "Email address",
+      "emailPlaceholder": "email{'@'}example.com",
+      "password": "Password",
+      "passwordPlaceholder": "Password...",
+      "remember": "Remember",
+      "submit": "Sign in",
+      "forgotPassword": "Forgot your password?",
+      "noAccount": "Don't have an account?",
+      "registerLink": "Create account",
+      "formDescription": "Enter your credentials to access your account.",
+      "providers": "Providers"
+    },
+    "loginFailed": {
+      "title": "Login failed",
+      "description": "Invalid credentials. Please try again."
+    },
+    "forgotPassword": {
+      "title": "Recover password",
+      "email": "Email address",
+      "emailPlaceholder": "email{'@'}example.com",
+      "submit": "Send reset link",
+      "success": "Check your email for reset instructions.",
+      "error": "Error sending email."
+    },
+    "register": {
+      "title": "Create account",
+      "description": "Register to access the platform",
+      "name": "Full name",
+      "email": "Email address",
+      "emailPlaceholder": "email{'@'}example.com",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••",
+      "confirmPassword": "Confirm password",
+      "submit": "Register",
+      "haveAccount": "Already have an account?",
+      "loginLink": "Sign in",
+      "firstName": "First name",
+      "firstNamePlaceholder": "Your name",
+      "lastName": "Last name",
+      "lastNamePlaceholder": "Your last name",
+      "minPassword": "Minimum 8 characters",
+      "continueWith": "Continue with:",
+      "success": {
+        "title": "Registration successful",
+        "description": "We have sent a verification email to your address"
+      },
+      "errors": {
+        "passwordRequired": "Password is required",
+        "passwordMinLength": "Password must be at least 8 characters",
+        "passwordUppercase": "Password must contain at least one uppercase letter",
+        "passwordNumber": "Password must contain at least one number",
+        "confirmPasswordRequired": "Please confirm your password",
+        "passwordsDoNotMatch": "Passwords do not match",
+        "invalidName": "Only letters and spaces are allowed"
+      },
+      "confirmPassword": "Confirm password",
+      "confirmPasswordPlaceholder": "••••••••"
+    },
+    "validation": {
+      "required": "This field is required",
+      "email": "Invalid email",
+      "minPassword": "Password must be at least 8 characters",
+      "passwordMatch": "Passwords do not match",
+      "emailRequired": "Email is required",
+      "emailMin": "Must be at least 4 characters",
+      "passwordRequired": "Password is required"
+    }
+  },
+  "profile": {
+    "title": "My Profile",
+    "description": "Manage your personal information and account settings",
+    "edit": {
+      "title": "Edit Profile",
+      "description": "Update your personal information",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Your last name",
+      "username": "Username",
+      "usernamePlaceholder": "Your username",
+      "submit": "Save changes",
+      "success": "Profile updated successfully",
+      "error": "Error updating profile"
+    },
+    "password": {
+      "title": "Change Password",
+      "description": "Update your access password",
+      "current": "Current password",
+      "currentPlaceholder": "Enter your current password",
+      "new": "New password",
+      "newPlaceholder": "Enter your new password",
+      "confirm": "Confirm new password",
+      "confirmPlaceholder": "Repeat your new password",
+      "submit": "Update password",
+      "success": "Password updated successfully",
+      "error": "Error updating password"
+    },
+    "info": {
+      "title": "Account Information",
+      "email": "Email",
+      "group": "Group",
+      "created": "Member since",
+      "updated": "Last updated"
+    },
+    "verified": "Verified",
+    "unverified": "Not verified",
+    "avatar": {
+      "tooltip": "Change profile picture",
+      "success": "Profile picture updated",
+      "error": "Error updating profile picture"
+    }
+  },
+  "chat": {
+    "supportTitle": "Live Support",
+    "supportAgent": "Support",
+    "placeholder": "Type your message here...",
+    "loginRequiredTitle": "Authentication required",
+    "loginRequired": "You need to sign in to your account to communicate with our support team.",
+    "loginButton": "Go to Sign in"
+  }
+}
