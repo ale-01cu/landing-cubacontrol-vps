@@ -6,8 +6,8 @@ useHead({
   ],
   link: [
     { rel: 'icon', href: '/favicon.ico' },
-    { rel: 'canonical', href: 'https://cubacontrol-sa.web.app' },
-    { rel: 'stylesheet', href: 'https://db.onlinewebfonts.com/c/7231eadf5c2ea1154aa9815e12a6314c?family=English+111+Vivace+BT+V2' }
+    { rel: 'canonical', href: 'https://cubacontrol-sa.web.app' }
+    // ponytail: fuente externa eliminada — bloqueaba primer pintado (FOIT). Autoalojar en /public/fonts con @font-face + font-display:swap si se necesita English Vivace.
 
   ],
   htmlAttrs: {
@@ -35,18 +35,10 @@ useServerSeoMeta({
   author: 'CubaControl S.A.',
   robots: 'index, follow'
 })
-
-const loading = ref(true)
-onMounted(async () => {
-  loading.value = false
-})
 </script>
 
 <template>
   <UApp>
-    <ClientOnly>
-      <loading v-if="loading" />
-      <NuxtLayout v-else />
-    </ClientOnly>
+    <NuxtLayout />
   </UApp>
 </template>

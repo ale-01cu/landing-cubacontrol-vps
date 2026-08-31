@@ -8,15 +8,14 @@ import HomeLaboratorio from '~/components/home/HomeLaboratorio.vue'
 import HomeSeguros from '~/components/home/HomeSeguros.vue'
 
 const { t, locale } = useI18n()
-const ready = ref(false)
 
 const baseUrl = 'https://cubacontrol-sa.web.app'
 
 // --- Home editable content (PocketBase) with fallback ---
 const { banners: dynamicBanners, getText, fetchHomeContent } = useHomeContent()
 
-// SSR + ISR 60: fetch during server render, watch locale for client switch
-await useAsyncData(`home-content-${locale.value}`, () => fetchHomeContent(locale.value), { watch: [locale] })
+// ponytail: lazy para no bloquear primer pintado — pinta con fallbacks (staticBanners + i18n) y actualiza en bg cuando PB responde
+useLazyAsyncData(`home-content-${locale.value}`, () => fetchHomeContent(locale.value), { watch: [locale] })
 
 // SEO: hero is managed by home_banners, not home_texts
 const seoTitle = computed(() => dynamicBanners.value[0]?.title || t('landing.hero.title'))
@@ -153,9 +152,7 @@ const missionContent = computed(() => getText('essence.mission.content', t('land
 const visionTitle = computed(() => getText('essence.vision.title', t('landing.essence.vision.title')))
 const visionContent = computed(() => getText('essence.vision.content', t('landing.essence.vision.content')))
 
-onMounted(() => {
-  ready.value = true
-})
+
 </script>
 
 <template>
