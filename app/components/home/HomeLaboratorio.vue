@@ -22,40 +22,62 @@ interface Laboratorio {
   galleryTitle: string
 }
 
+const { getText, getSectionItems } = useHomeContent()
+
 const laboratorio = computed(() => tm('landing.laboratorio') as Laboratorio)
 
-const labHeadline = computed(() => rt(laboratorio.value.headline))
-const labTitle = computed(() => rt(laboratorio.value.title))
-const labDescription = computed(() => rt(laboratorio.value.description))
-const labButton = computed(() => rt(laboratorio.value.button))
-const labAreasTitle = computed(() => rt(laboratorio.value.areasTitle))
-const labAreas = computed(() => laboratorio.value.areas.map(a => rt(a.title)))
-const labCertHeadline = computed(() => rt(laboratorio.value.certHeadline))
-const labCertTitle = computed(() => rt(laboratorio.value.certTitle))
-const labCertDescription = computed(() => rt(laboratorio.value.certDescription))
-const labCertifications = computed(() => laboratorio.value.certifications.map(c => rt(c)))
-const labGalleryHeadline = computed(() => rt(laboratorio.value.galleryHeadline))
-const labGalleryTitle = computed(() => rt(laboratorio.value.galleryTitle))
+const labHeadline = computed(() => getText('laboratorio.headline', rt(laboratorio.value.headline)))
+const labTitle = computed(() => getText('laboratorio.title', rt(laboratorio.value.title)))
+const labDescription = computed(() => getText('laboratorio.description', rt(laboratorio.value.description)))
+const labButton = computed(() => getText('laboratorio.button', rt(laboratorio.value.button)))
+const labAreasTitle = computed(() => getText('laboratorio.areasTitle', rt(laboratorio.value.areasTitle)))
+const labAreasFallback = computed(() => laboratorio.value.areas.map(a => rt(a.title)))
+const labAreas = computed(() => {
+  const dyn = getSectionItems<any>('lab_areas', [])
+  if (dyn.length) return dyn.map((d: any) => d.title)
+  return labAreasFallback.value
+})
+const labCertHeadline = computed(() => getText('laboratorio.certHeadline', rt(laboratorio.value.certHeadline)))
+const labCertTitle = computed(() => getText('laboratorio.certTitle', rt(laboratorio.value.certTitle)))
+const labCertDescription = computed(() => getText('laboratorio.certDescription', rt(laboratorio.value.certDescription)))
+const labCertificationsFallback = computed(() => laboratorio.value.certifications.map(c => rt(c)))
+const labCertifications = computed(() => {
+  const dyn = getSectionItems<any>('lab_certifications', [])
+  if (dyn.length) return dyn.map((d: any) => d.title)
+  return labCertificationsFallback.value
+})
+const labGalleryHeadline = computed(() => getText('laboratorio.galleryHeadline', rt(laboratorio.value.galleryHeadline)))
+const labGalleryTitle = computed(() => getText('laboratorio.galleryTitle', rt(laboratorio.value.galleryTitle)))
 
-const links = ref<ButtonProps[]>([
+const links = computed<ButtonProps[]>(() => [
   {
-    label: labButton,
+    label: labButton.value,
     to: '/contact',
     color: 'primary',
     trailingIcon: 'i-lucide-arrow-right'
   }
 ])
 
-const areas = [
+const fallbackAreasMeta = [
   { title: 'Fertilizantes', icon: 'i-lucide-leaf' },
   { title: 'Frutas, Vegetales y Conservas', icon: 'i-lucide-apple' },
-  { title: 'Lácteos, Aceites y Grasas', icon: 'i-lucide-cheese' },
+  { title: 'Lácteos, Aceites y Grasas', icon: 'i-lucide-milk' },
   { title: 'Harinas y Granos', icon: 'i-lucide-wheat' },
   { title: 'Bebidas', icon: 'i-lucide-wine' },
-  { title: 'Mieles', icon: 'i-lucide-honey' },
-  { title: 'Azúcar', icon: 'i-lucide-cube' },
+  { title: 'Mieles', icon: 'i-lucide-droplets' },
+  { title: 'Azúcar', icon: 'i-lucide-box' },
   { title: 'Microbiología y Sensorial', icon: 'i-lucide-microscope' }
 ]
+const areas = computed(() => {
+  const dyn = getSectionItems<any>('lab_areas', [])
+  if (dyn.length) {
+    return dyn.map((d: any, i: number) => ({
+      title: d.title,
+      icon: d.icon || fallbackAreasMeta[i]?.icon || 'i-lucide-flask-conical'
+    }))
+  }
+  return fallbackAreasMeta
+})
 
 const images = [
   '/lab_images/lab-3.png',
@@ -96,7 +118,7 @@ const images = [
         </h3>
         <div class="grid grid-cols-2 gap-3">
           <UCard
-            v-for="(area, i) in areas"
+            v-for="area in areas"
             :key="area.title"
             class="text-center hover:shadow-md transition-shadow"
             :ui="{ body: 'p-3' }"
@@ -105,7 +127,7 @@ const images = [
               :name="area.icon"
               class="text-primary text-xl mb-1 block"
             />
-            <span class="text-xs font-medium text-gray-700">{{ labAreas[i] }}</span>
+            <span class="text-xs font-medium text-gray-700">{{ area.title }}</span>
           </UCard>
         </div>
       </div>

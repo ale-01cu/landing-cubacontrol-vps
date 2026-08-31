@@ -1,12 +1,29 @@
 <script setup lang="ts">
-const items = Array.from({ length: 24 }, (_, i) => `/incidencias/${i + 1}.jpg`)
+const { t } = useI18n()
+const { getText, incidents, getIncidentsImageUrls, getFileUrl } = useHomeContent()
+
+const fallbackItems = Array.from({ length: 24 }, (_, i) => `/incidencias/${i + 1}.jpg`)
+
+const items = computed(() => {
+  const urls = getIncidentsImageUrls.value
+  if (urls.length) return urls
+  // legacy single-record fallback (pre-schema change)
+  const rec: any = incidents.value
+  if (rec?.images?.length) {
+    return rec.images.map((f: string) => getFileUrl(rec, f) || fallbackItems[0]!)
+  }
+  return fallbackItems
+})
+
+const incidentsTitle = computed(() => getText('incidents.title', t('incidents.title')))
+const incidentsDescription = computed(() => getText('incidents.description', t('incidents.description')))
 </script>
 
 <template>
   <UContainer>
     <UPageSection
-      :title="$t('incidents.title')"
-      :description="$t('incidents.description')"
+      :title="incidentsTitle"
+      :description="incidentsDescription"
     />
     <UCarousel
       v-slot="{ item }"

@@ -2,6 +2,13 @@
 const { t } = useI18n()
 const toast = useToast()
 const { isAuthenticated, user } = useAuth()
+const { getText } = useHomeContent()
+
+const ctaTitle = computed(() => getText('cta.title', t('landing.subscription.title')))
+const ctaDescription = computed(() => getText('cta.description', t('landing.subscription.description')))
+const ctaPlaceholder = computed(() => getText('cta.placeholder', t('landing.subscription.input.placeholder')))
+const ctaButtonLabel = computed(() => getText('cta.button_label', t('landing.subscription.actions.submit.label')))
+const ctaNote = computed(() => getText('cta.note', t('landing.subscription.note')))
 
 const email = ref('')
 const loading = ref(false)
@@ -61,8 +68,8 @@ const subscribe = async () => {
 <template>
   <UPageSection
     class="bg-primary-50 rounded-3xl"
-    :title="t('landing.subscription.title')"
-    :description="t('landing.subscription.description')"
+    :title="ctaTitle"
+    :description="ctaDescription"
   >
     <div class="max-w-3xl mx-auto text-center">
       <!-- Usuario autenticado -->
@@ -95,7 +102,7 @@ const subscribe = async () => {
           <UInput
             v-model="email"
             type="email"
-            :placeholder="t('landing.subscription.input.placeholder')"
+            :placeholder="ctaPlaceholder"
             size="xl"
             class="flex-1"
             disabled
@@ -107,7 +114,7 @@ const subscribe = async () => {
             :loading="loading"
             trailing-icon="i-lucide-send"
           >
-            {{ t('landing.subscription.actions.submit.label') }}
+            {{ ctaButtonLabel }}
           </UButton>
         </form>
 
@@ -115,7 +122,7 @@ const subscribe = async () => {
           v-if="!subscribed && !checkingStatus"
           class="text-xs text-muted mt-3"
         >
-          {{ t('landing.subscription.note') }}
+          {{ ctaNote }}
         </p>
       </template>
 

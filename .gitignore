@@ -25,4 +25,8 @@ logs
 
 
 
+# Generated packs (local only)
+pack_*.txt
+consolidated_code.txt
+
 pb_schema.json

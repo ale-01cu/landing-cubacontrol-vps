@@ -9,6 +9,8 @@ interface LandingServices {
   items: ServiceItem[]
 }
 const { tm, t, rt } = useI18n()
+const { getText, getSectionItems, services: servicesRecord, getFileUrl } = useHomeContent()
+
 const services = computed(
   () => tm('landing.services') as LandingServices
 )
@@ -20,13 +22,34 @@ const icons = [
   'i-lucide-clipboard-check',
   'i-lucide-brain-circuit'
 ]
-const features = computed(() =>
+const fallbackFeatures = computed(() =>
   services.value.items.map((item, index) => ({
     icon: icons[index],
     title: rt(item.title),
     description: rt(item.description)
   }))
 )
+const features = computed(() => {
+  const dyn = getSectionItems<any>('services', [])
+  if (dyn.length) {
+    return dyn.map((d: any, i: number) => ({
+      icon: d.icon || icons[i] || 'i-lucide-circle',
+      title: d.title,
+      description: d.description
+    }))
+  }
+  return fallbackFeatures.value
+})
+const servicesTitle = computed(() => getText('services.title', t('landing.services.title')))
+const servicesDescription = computed(() => getText('services.description', t('landing.services.description')))
+const servicesImage = computed(() => {
+  const r = servicesRecord.value
+  if (r?.image) {
+    const url = getFileUrl(r as any, r.image)
+    if (url) return url
+  }
+  return '/control-package.jpg'
+})
 
 const links = ref<ButtonProps[]>([
   {
@@ -59,7 +82,7 @@ const links = ref<ButtonProps[]>([
       <!-- IMAGEN -->
       <NuxtImg
         data-aos="fade-left"
-        src="/control-package.jpg"
+        :src="servicesImage"
         alt="Illustration"
         class="w-full h-[320px] object-cover rounded-2xl relative z-10"
       />
@@ -69,7 +92,7 @@ const links = ref<ButtonProps[]>([
         v-for="(item, i) in features"
         :key="i"
         :title="item.title"
-        :icon="icons[i]"
+        :icon="item.icon"
       >
         <template #description>
           <p
@@ -84,7 +107,7 @@ const links = ref<ButtonProps[]>([
     </template>
     <template #title>
       <h1 data-aos="fade-right">
-        {{ t('landing.services.title') }}
+        {{ servicesTitle }}
       </h1>
     </template>
 
@@ -93,7 +116,7 @@ const links = ref<ButtonProps[]>([
         data-aos="fade-right"
         data-aos-delay="200"
       >
-        {{ t('landing.services.description') }}
+        {{ servicesDescription }}
       </p>
     </template>
   </UPageSection>

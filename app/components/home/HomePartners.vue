@@ -1,7 +1,8 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const { partners, getPartnersImageUrls, getText } = useHomeContent()
 
-const partnerImages = [
+const fallbackPartnerImages = [
   {
     src: '/partners/partners.webp',
     alt: 'Partners'
@@ -11,6 +12,21 @@ const partnerImages = [
     alt: 'OPS'
   }
 ]
+
+const partnersTitle = computed(() => getText('partners.title', t('landing.partners.title')))
+const partnersDesc = computed(() => getText('partners.description', t('landing.partners.description')))
+
+const displayPartners = computed(() => {
+  const urls = getPartnersImageUrls.value
+  if (urls.length) {
+    return urls.map((src, i) => ({
+      src,
+      alt: `Partner ${i + 1}`,
+      href: null as string | null
+    }))
+  }
+  return fallbackPartnerImages.map(p => ({ ...p, href: null as string | null }))
+})
 </script>
 
 <template>
@@ -20,20 +36,34 @@ const partnerImages = [
   >
     <div class="text-center max-w-3xl mx-auto mb-8">
       <h2 class="text-3xl sm:text-4xl font-semibold text-gray-900">
-        {{ t('landing.partners.title') }}
+        {{ partnersTitle }}
       </h2>
       <p class="text-gray-600 mt-4 text-justify leading-relaxed">
-        {{ t('landing.partners.description') }}
+        {{ partnersDesc }}
       </p>
     </div>
 
     <div class="flex flex-col sm:flex-row gap-6 w-full">
       <div
-        v-for="img in partnerImages"
-        :key="img.alt"
+        v-for="img in displayPartners"
+        :key="img.alt + img.src"
         class="rounded-2xl lg:w-1/2 overflow-hidden bg-white/80"
       >
+        <a
+          v-if="img.href"
+          :href="img.href"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <NuxtImg
+            :src="img.src"
+            :alt="img.alt"
+            class="w-full h-full md:h-64 lg:h-96 object-contain"
+            loading="lazy"
+          />
+        </a>
         <NuxtImg
+          v-else
           :src="img.src"
           :alt="img.alt"
           class="w-full h-full md:h-64 lg:h-96 object-contain"

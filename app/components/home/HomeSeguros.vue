@@ -17,13 +17,16 @@ interface Seguros {
   types: SeguroType[]
 }
 
+const { t } = useI18n()
+const { getText, insuranceRecords, getInsuranceImageUrl } = useHomeContent()
+
 const seguros = computed(() => tm('landing.seguros') as Seguros)
 
-const segHeadline = computed(() => rt(seguros.value.headline))
-const segTitle = computed(() => rt(seguros.value.title))
-const segIntro = computed(() => rt(seguros.value.intro))
-const segButton = computed(() => rt(seguros.value.button))
-const segTypesTitle = computed(() => rt(seguros.value.typesTitle))
+const segHeadline = computed(() => getText('seguros.headline', rt(seguros.value.headline)))
+const segTitle = computed(() => getText('seguros.title', rt(seguros.value.title)))
+const segIntro = computed(() => getText('seguros.intro', rt(seguros.value.intro)))
+const segButton = computed(() => getText('seguros.button', rt(seguros.value.button)))
+const segTypesTitle = computed(() => getText('seguros.typesTitle', rt(seguros.value.typesTitle)))
 
 const segImages = [
   '/agent_images/seguro_de_vida.webp',
@@ -35,15 +38,26 @@ const segImages = [
   '/agent_images/seguro_bienes_pecuarios.webp'
 ]
 
-const segTypes = computed(() => seguros.value.types.map((s, i) => ({
+const fallbackSegTypes = computed(() => seguros.value.types.map((s, i) => ({
   title: rt(s.title),
   description: rt(s.description),
   image: segImages[i]
 })))
 
-const links = ref<ButtonProps[]>([
+const segTypes = computed(() => {
+  if (insuranceRecords.value.length) {
+    return insuranceRecords.value.map((r: any, i: number) => ({
+      title: r.title ?? r.name ?? '',
+      description: r.description,
+      image: r.image ? getInsuranceImageUrl(r) : (segImages[i] || segImages[0])
+    }))
+  }
+  return fallbackSegTypes.value
+})
+
+const links = computed<ButtonProps[]>(() => [
   {
-    label: segButton,
+    label: segButton.value,
     to: '/contact',
     color: 'primary',
     trailingIcon: 'i-lucide-arrow-right'

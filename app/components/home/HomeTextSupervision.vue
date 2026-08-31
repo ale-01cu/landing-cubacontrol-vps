@@ -1,5 +1,15 @@
 <script setup lang="ts">
 const { t } = useI18n()
+const { getText, supervisionImageUrl } = useHomeContent()
+
+const supervisionTitle = computed(() => getText('supervision.title', t('landing.supervision.title')))
+const supervisionDescription = computed(() => getText('supervision.description', t('landing.supervision.description')))
+const supervisionDescription1 = computed(() => getText('supervision.description1', t('landing.supervision.description1')))
+const supervisionNote = computed(() => getText('supervision.note', t('landing.supervision.note')))
+const supervisionObjectiveTitle = computed(() => getText('supervision.objective.title', t('landing.supervision.objective.title')))
+const supervisionObjectiveDescription = computed(() => getText('supervision.objective.description', t('landing.supervision.objective.description')))
+
+const displayImage = computed(() => supervisionImageUrl.value || '/importancia-supervision.jpg')
 </script>
 
 <template>
@@ -12,16 +22,16 @@ const { t } = useI18n()
       <!-- TITLE -->
       <div>
         <h2 class="text-3xl sm:text-4xl font-semibold text-gray-900">
-          {{ t('landing.supervision.title') }}
+          {{ supervisionTitle }}
         </h2>
       </div>
       <div class="space-y-3 text-justify">
         <p class="text-base leading-relaxed text-gray-600">
-          {{ t('landing.supervision.description') }}
+          {{ supervisionDescription }}
         </p>
 
         <p class="text-base leading-relaxed text-gray-600">
-          {{ t('landing.supervision.description1') }}
+          {{ supervisionDescription1 }}
         </p>
       </div>
 
@@ -34,7 +44,7 @@ const { t } = useI18n()
           />
 
           <p class="text-gray-700 leading-relaxed text-justify">
-            {{ t('landing.supervision.note') }}
+            {{ supervisionNote }}
           </p>
         </div>
       </UCard>
@@ -42,7 +52,7 @@ const { t } = useI18n()
       <!-- OBJECTIVE -->
       <div class="space-y-4 pt-2">
         <h3 class="text-2xl font-semibold text-gray-900">
-          {{ t('landing.supervision.objective.title') }}
+          {{ supervisionObjectiveTitle }}
         </h3>
 
         <div class="flex gap-4 text-justify">
@@ -52,7 +62,7 @@ const { t } = useI18n()
           />
 
           <p class="text-gray-600 leading-relaxed">
-            {{ t('landing.supervision.objective.description') }}
+            {{ supervisionObjectiveDescription }}
           </p>
         </div>
       </div>
@@ -71,8 +81,8 @@ const { t } = useI18n()
       <!-- IMAGEN -->
       <NuxtImg
         data-aos="fade-left"
-        src="/importancia-supervision.jpg"
-        alt="Illustration"
+        :src="displayImage"
+        alt="Supervisión comercial"
         class="w-full h-[320px] object-cover rounded-2xl relative z-10"
       />
     </div>

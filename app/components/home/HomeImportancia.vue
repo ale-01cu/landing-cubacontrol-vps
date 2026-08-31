@@ -7,6 +7,7 @@ interface LandingBenefits {
   items: ReasonItem[]
 }
 const { tm, t, rt } = useI18n()
+const { getText, getSectionItems } = useHomeContent()
 
 const reasons = computed(
   () => tm('landing.benefits') as LandingBenefits
@@ -17,13 +18,25 @@ const icons = [
   'i-lucide-package-search',
   'i-lucide-search-check'
 ]
-const features = computed(() =>
+const fallbackFeatures = computed(() =>
   reasons.value.items.map((item, index) => ({
     icon: icons[index],
     title: rt(item.title),
     description: rt(item.description)
   }))
 )
+const features = computed(() => {
+  const dyn = getSectionItems<any>('benefits', [])
+  if (dyn.length) {
+    return dyn.map((d: any, i: number) => ({
+      icon: d.icon || icons[i] || 'i-lucide-circle',
+      title: d.title,
+      description: d.description
+    }))
+  }
+  return fallbackFeatures.value
+})
+const benefitsTitle = computed(() => getText('benefits.title', t('landing.benefits.title')))
 </script>
 
 <template>
@@ -58,7 +71,7 @@ const features = computed(() =>
         v-for="(item, i) in features"
         :key="i"
         :title="item.title"
-        :icon="icons[i]"
+        :icon="item.icon"
       >
         <template #description>
           <p
@@ -73,7 +86,7 @@ const features = computed(() =>
     </template>
     <template #title>
       <h1 data-aos="fade-right">
-        {{ t('landing.benefits.title') }}
+        {{ benefitsTitle }}
       </h1>
     </template>
   </UPageSection>

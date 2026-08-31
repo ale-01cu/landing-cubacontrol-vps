@@ -12,11 +12,20 @@ const ready = ref(false)
 
 const baseUrl = 'https://cubacontrol-sa.web.app'
 
+// --- Home editable content (PocketBase) with fallback ---
+const { banners: dynamicBanners, getText, fetchHomeContent } = useHomeContent()
+
+// SSR + ISR 60: fetch during server render, watch locale for client switch
+await useAsyncData(`home-content-${locale.value}`, () => fetchHomeContent(locale.value), { watch: [locale] })
+
+// SEO: hero is managed by home_banners, not home_texts
+const seoTitle = computed(() => dynamicBanners.value[0]?.title || t('landing.hero.title'))
+const seoDescription = computed(() => dynamicBanners.value[0]?.description || t('landing.hero.description'))
 useSeoMeta({
-  title: () => t('landing.hero.title'),
-  description: () => t('landing.hero.description'),
-  ogTitle: () => t('landing.hero.title'),
-  ogDescription: () => t('landing.hero.description'),
+  title: () => seoTitle.value,
+  description: () => seoDescription.value,
+  ogTitle: () => seoTitle.value,
+  ogDescription: () => seoDescription.value,
   ogImage: `${baseUrl}/logo.png`,
   ogUrl: () => locale.value === 'es' ? baseUrl : `${baseUrl}/en`,
   twitterCard: 'summary_large_image',
@@ -28,7 +37,7 @@ useServerSeoMeta({
   robots: 'index, follow'
 })
 
-const banners = ref<IBanner[]>([
+const staticBanners = ref<IBanner[]>([
   {
     headline: 'Servicios Internacionales de Supervisión',
     title: 'CubaControl S.A',
@@ -134,6 +143,16 @@ const banners = ref<IBanner[]>([
   }
 ])
 
+const banners = computed<IBanner[]>(() => dynamicBanners.value.length ? dynamicBanners.value : staticBanners.value)
+
+// Editable texts with i18n fallback
+const essenceTitle = computed(() => getText('essence.title', t('landing.essence.title')))
+const essenceDescription = computed(() => getText('essence.description', t('landing.essence.description')))
+const missionTitle = computed(() => getText('essence.mission.title', t('landing.essence.mission.title')))
+const missionContent = computed(() => getText('essence.mission.content', t('landing.essence.mission.content')))
+const visionTitle = computed(() => getText('essence.vision.title', t('landing.essence.vision.title')))
+const visionContent = computed(() => getText('essence.vision.content', t('landing.essence.vision.content')))
+
 onMounted(() => {
   ready.value = true
 })
@@ -149,11 +168,11 @@ onMounted(() => {
       <!-- Header -->
       <div class="max-w-3xl mx-auto text-center mb-7">
         <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
-          {{ t('landing.essence.title') }}
+          {{ essenceTitle }}
         </h2>
 
         <p class="text-muted mt-4 text-lg">
-          {{ t('landing.essence.description') }}
+          {{ essenceDescription }}
         </p>
       </div>
 
@@ -183,12 +202,12 @@ onMounted(() => {
             </div>
 
             <h3 class="text-2xl font-semibold">
-              {{ t('landing.essence.mission.title') }}
+              {{ missionTitle }}
             </h3>
           </div>
 
           <p class="text-muted leading-relaxed text-base text-justify">
-            {{ t('landing.essence.mission.content') }}
+            {{ missionContent }}
           </p>
         </UCard>
 
@@ -214,12 +233,12 @@ onMounted(() => {
             </div>
 
             <h3 class="text-2xl font-semibold">
-              {{ t('landing.essence.vision.title') }}
+              {{ visionTitle }}
             </h3>
           </div>
 
           <p class="text-muted leading-relaxed text-base text-justify">
-            {{ t('landing.essence.vision.content') }}
+            {{ visionContent }}
           </p>
         </UCard>
       </div>
