@@ -4,7 +4,7 @@ interface IEntity {
   logo: string
 }
 const { t } = useI18n()
-const { getText, patronRecords, getPatronLogoUrl } = useHomeContent()
+const { getText, patronsSection, patronRecords, fetched, fetchFailed, getPatronLogoUrl } = useHomeContent()
 
 const fallbackEntities: IEntity[] = [
   { name: 'ONARC', logo: 'patrons/logo_onarc.png' },
@@ -28,6 +28,12 @@ const fallbackEntities: IEntity[] = [
 const trustTitle = computed(() => getText('trust.title', t('landing.trust.title')))
 const trustDescription = computed(() => getText('trust.description', t('landing.trust.description')))
 
+// ponytail: active=false en PB oculta; carga/error muestra fallback
+const isVisible = computed(() => {
+  if (!fetched.value || fetchFailed.value) return true
+  return !!patronsSection.value
+})
+
 const displayEntities = computed(() => {
   if (patronRecords.value.length) {
     return patronRecords.value.map(p => ({
@@ -36,12 +42,15 @@ const displayEntities = computed(() => {
       href: p.website_url || null
     }))
   }
+  // ponytail: si PB ya cargó y no hay patrons activos, grid vacío (no fallback)
+  if (fetched.value && !fetchFailed.value) return [] as { name: string, logo: string, href: string | null }[]
   return fallbackEntities.map(e => ({ ...e, href: null as string | null }))
 })
 </script>
 
 <template>
   <UPageSection
+    v-if="isVisible"
     class="relative overflow-hidden rounded-3xl bg-primary-50/40"
   >
     <!-- HEADER -->
@@ -57,6 +66,7 @@ const displayEntities = computed(() => {
 
     <!-- LOGOS GRID -->
     <div
+      v-if="displayEntities.length"
       class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 items-center justify-center"
     >
       <div

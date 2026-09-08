@@ -7,7 +7,7 @@ interface LandingBenefits {
   items: ReasonItem[]
 }
 const { tm, t, rt } = useI18n()
-const { getText, getSectionItems } = useHomeContent()
+const { getText, getSectionItems, benefits: benefitsRecord, fetched, fetchFailed } = useHomeContent()
 
 const reasons = computed(
   () => tm('landing.benefits') as LandingBenefits
@@ -34,13 +34,21 @@ const features = computed(() => {
       description: d.description
     }))
   }
+  // ponytail: active=false -> lista vacía; carga/error -> fallback
+  if (fetched.value && !fetchFailed.value) return [] as { icon: string, title: string, description: string }[]
   return fallbackFeatures.value
+})
+// ponytail: active=false oculta, carga/error muestra fallback
+const isVisible = computed(() => {
+  if (!fetched.value || fetchFailed.value) return true
+  return !!benefitsRecord.value
 })
 const benefitsTitle = computed(() => getText('benefits.title', t('landing.benefits.title')))
 </script>
 
 <template>
   <UPageSection
+    v-if="isVisible"
     class="bg-primary-50"
     orientation="horizontal"
     reverse

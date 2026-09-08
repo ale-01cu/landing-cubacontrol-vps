@@ -12,7 +12,7 @@ const { t, locale } = useI18n()
 const baseUrl = 'https://cubacontrol-sa.web.app'
 
 // --- Home editable content (PocketBase) with fallback ---
-const { banners: dynamicBanners, getText, fetchHomeContent } = useHomeContent()
+const { banners: dynamicBanners, essence, fetched, fetchFailed, getText, fetchHomeContent } = useHomeContent()
 
 // ponytail: lazy para no bloquear primer pintado — pinta con fallbacks (staticBanners + i18n) y actualiza en bg cuando PB responde
 useLazyAsyncData(`home-content-${locale.value}`, () => fetchHomeContent(locale.value), { watch: [locale] })
@@ -143,6 +143,15 @@ const staticBanners = ref<IBanner[]>([
 ])
 
 const banners = computed<IBanner[]>(() => dynamicBanners.value.length ? dynamicBanners.value : staticBanners.value)
+// ponytail: active=false oculta, carga/error muestra fallback
+const showHero = computed(() => {
+  if (!fetched.value || fetchFailed.value) return true
+  return dynamicBanners.value.length > 0
+})
+const showEssence = computed(() => {
+  if (!fetched.value || fetchFailed.value) return true
+  return !!essence.value
+})
 
 // Editable texts with i18n fallback
 const essenceTitle = computed(() => getText('essence.title', t('landing.essence.title')))
@@ -157,8 +166,9 @@ const visionContent = computed(() => getText('essence.vision.content', t('landin
 
 <template>
   <div id="start">
-    <HeroBannerCarousel :banners="banners" />
+    <HeroBannerCarousel v-if="showHero" :banners="banners" />
     <UPageSection
+      v-if="showEssence"
       id="mision-vision"
       class="relative overflow-hidden mb-0"
     >

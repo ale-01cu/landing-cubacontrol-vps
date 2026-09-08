@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const { getText, incidents, getIncidentsImageUrls, getFileUrl } = useHomeContent()
+const { getText, incidents, fetched, fetchFailed, getIncidentsImageUrls, getFileUrl } = useHomeContent()
 
 const fallbackItems = Array.from({ length: 24 }, (_, i) => `/incidencias/${i + 1}.jpg`)
 
@@ -12,7 +12,14 @@ const items = computed(() => {
   if (rec?.images?.length) {
     return rec.images.map((f: string) => getFileUrl(rec, f) || fallbackItems[0]!)
   }
+  // ponytail: active=false -> vacío; carga/error -> fallback
+  if (fetched.value && !fetchFailed.value) return [] as string[]
   return fallbackItems
+})
+// ponytail: active=false oculta, carga/error muestra fallback
+const isVisible = computed(() => {
+  if (!fetched.value || fetchFailed.value) return true
+  return !!incidents.value
 })
 
 const incidentsTitle = computed(() => getText('incidents.title', t('incidents.title')))
@@ -20,7 +27,7 @@ const incidentsDescription = computed(() => getText('incidents.description', t('
 </script>
 
 <template>
-  <UContainer>
+  <UContainer v-if="isVisible">
     <UPageSection
       :title="incidentsTitle"
       :description="incidentsDescription"

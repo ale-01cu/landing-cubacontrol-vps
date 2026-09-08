@@ -9,7 +9,7 @@ interface LandingServices {
   items: ServiceItem[]
 }
 const { tm, t, rt } = useI18n()
-const { getText, getSectionItems, services: servicesRecord, getFileUrl } = useHomeContent()
+const { getText, getSectionItems, services: servicesRecord, fetched, fetchFailed, getFileUrl } = useHomeContent()
 
 const services = computed(
   () => tm('landing.services') as LandingServices
@@ -38,7 +38,14 @@ const features = computed(() => {
       description: d.description
     }))
   }
+  // ponytail: active=false -> lista vacía; carga/error -> fallback
+  if (fetched.value && !fetchFailed.value) return [] as { icon: string, title: string, description: string }[]
   return fallbackFeatures.value
+})
+// ponytail: active=false oculta, carga/error muestra fallback
+const isVisible = computed(() => {
+  if (!fetched.value || fetchFailed.value) return true
+  return !!servicesRecord.value
 })
 const servicesTitle = computed(() => getText('services.title', t('landing.services.title')))
 const servicesDescription = computed(() => getText('services.description', t('landing.services.description')))
@@ -63,6 +70,7 @@ const links = ref<ButtonProps[]>([
 
 <template>
   <UPageSection
+    v-if="isVisible"
     orientation="horizontal"
     :ui="{
       title: 'justify-end',

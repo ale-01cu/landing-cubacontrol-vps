@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const { partners, getPartnersImageUrls, getText } = useHomeContent()
+const { partners, fetched, fetchFailed, getPartnersImageUrls, getText } = useHomeContent()
 
 const fallbackPartnerImages = [
   {
@@ -25,12 +25,20 @@ const displayPartners = computed(() => {
       href: null as string | null
     }))
   }
+  // ponytail: active=false -> vacío; carga/error -> fallback
+  if (fetched.value && !fetchFailed.value) return [] as { src: string, alt: string, href: string | null }[]
   return fallbackPartnerImages.map(p => ({ ...p, href: null as string | null }))
+})
+// ponytail: active=false oculta, carga/error muestra fallback
+const isVisible = computed(() => {
+  if (!fetched.value || fetchFailed.value) return true
+  return !!partners.value
 })
 </script>
 
 <template>
   <UPageSection
+    v-if="isVisible"
     id="partners"
     class="bg-white rounded-3xl"
   >

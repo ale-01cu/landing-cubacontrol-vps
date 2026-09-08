@@ -256,6 +256,12 @@ export const useHomeContent = () => {
 
   const pending = useState<boolean>('home-pending', () => false)
   const error = useState<string | null>('home-error', () => null)
+  // ponytail: distingue "aún no cargó" (mostrar fallback) de "cargó sin activos" (ocultar)
+  const fetched = useState<boolean>('home-fetched', () => false)
+  // ponytail: true si PB falló por red (mostrar fallback); 404 = sin activos (ocultar)
+  const fetchFailed = useState<boolean>('home-fetch-failed', () => false)
+
+  const isNotFound = (e: any) => e?.status === 404 || e?.data?.code === 404
 
   const getFileUrl = (record: { id: string, collectionId: string }, filename: string) => {
     if (!filename) return ''
@@ -439,6 +445,7 @@ export const useHomeContent = () => {
     const loc = targetLocale || locale.value
     pending.value = true
     error.value = null
+    fetchFailed.value = false
     try {
       const [
         bannersRes,
@@ -458,42 +465,57 @@ export const useHomeContent = () => {
         ctaRes
       ] = await Promise.allSettled([
         ($pb as any).collection('home_banners').getFullList({ filter: `locale="${loc}" && active=true`, sort: 'sort_order,created' }),
-        ($pb as any).collection('home_essence').getFirstListItem(`locale="${loc}" && active=true`).catch(() => null),
-        ($pb as any).collection('home_services').getFirstListItem(`locale="${loc}" && active=true`, { expand: 'service_1_icon,service_2_icon,service_3_icon,service_4_icon,service_5_icon,service_6_icon' }).catch(() => null),
-        ($pb as any).collection('home_benefits').getFirstListItem(`locale="${loc}" && active=true`, { expand: 'benefit_1_icon,benefit_2_icon,benefit_3_icon' }).catch(() => null),
-        ($pb as any).collection('home_supervision').getFirstListItem(`locale="${loc}" && active=true`).catch(() => null),
-        ($pb as any).collection('home_incidents').getFirstListItem(`locale="${loc}" && active=true`).catch(() => null),
-        ($pb as any).collection('home_laboratory').getFirstListItem(`locale="${loc}" && active=true`).catch(() => null),
-        ($pb as any).collection('home_laboratory_areas').getFullList({ filter: `locale="${loc}" && active=true`, expand: 'icon', sort: 'created' }).catch(() => []),
-        ($pb as any).collection('home_lab_certifications').getFirstListItem(`locale="${loc}" && active=true`).catch(() => null),
-        ($pb as any).collection('home_insurance').getFirstListItem(`locale="${loc}" && active=true`).catch(() => null),
-        ($pb as any).collection('home_insurance_types').getFullList({ filter: `locale="${loc}"`, sort: 'created' }).catch(() => ($pb as any).collection('home_insurance_types').getFullList({ sort: 'created' }).catch(() => [])),
-        ($pb as any).collection('home_partners').getFirstListItem(`locale="${loc}" && active=true`).catch(() => null),
-        ($pb as any).collection('home_patrons_section').getFirstListItem(`locale="${loc}" && active=true`).catch(() => null),
-        ($pb as any).collection('home_patrons').getFullList({ filter: `locale="${loc}" && active=true`, sort: 'sort_order,created' }).catch(() => []),
-        ($pb as any).collection('home_cta').getFirstListItem(`locale="${loc}" && active=true`).catch(() => null),
+        ($pb as any).collection('home_essence').getFirstListItem(`locale="${loc}" && active=true`),
+        ($pb as any).collection('home_services').getFirstListItem(`locale="${loc}" && active=true`, { expand: 'service_1_icon,service_2_icon,service_3_icon,service_4_icon,service_5_icon,service_6_icon' }),
+        ($pb as any).collection('home_benefits').getFirstListItem(`locale="${loc}" && active=true`, { expand: 'benefit_1_icon,benefit_2_icon,benefit_3_icon' }),
+        ($pb as any).collection('home_supervision').getFirstListItem(`locale="${loc}" && active=true`),
+        ($pb as any).collection('home_incidents').getFirstListItem(`locale="${loc}" && active=true`),
+        ($pb as any).collection('home_laboratory').getFirstListItem(`locale="${loc}" && active=true`),
+        ($pb as any).collection('home_laboratory_areas').getFullList({ filter: `locale="${loc}" && active=true`, expand: 'icon', sort: 'created' }),
+        ($pb as any).collection('home_lab_certifications').getFirstListItem(`locale="${loc}" && active=true`),
+        ($pb as any).collection('home_insurance').getFirstListItem(`locale="${loc}" && active=true`),
+        ($pb as any).collection('home_insurance_types').getFullList({ filter: `locale="${loc}"`, sort: 'created' }).catch((e: any) => {
+          if (isNotFound(e)) return ($pb as any).collection('home_insurance_types').getFullList({ sort: 'created' })
+          throw e
+        }),
+        ($pb as any).collection('home_partners').getFirstListItem(`locale="${loc}" && active=true`),
+        ($pb as any).collection('home_patrons_section').getFirstListItem(`locale="${loc}" && active=true`),
+        ($pb as any).collection('home_patrons').getFullList({ filter: `locale="${loc}" && active=true`, sort: 'sort_order,created' }),
+        ($pb as any).collection('home_cta').getFirstListItem(`locale="${loc}" && active=true`),
       ])
 
-      if (bannersRes.status === 'fulfilled' && Array.isArray(bannersRes.value)) {
-        banners.value = (bannersRes.value as HomeBannerRecord[]).map(mapBanner)
-      } else {
-        banners.value = []
+      // ponytail: single = 404 es "sin activos", otro error es fallo de red
+      const single = (res: PromiseSettledResult<any>) => {
+        if (res.status === 'fulfilled') return res.value as any
+        if (!isNotFound(res.reason)) fetchFailed.value = true
+        return null
+      }
+      const list = (res: PromiseSettledResult<any>) => {
+        if (res.status === 'fulfilled' && Array.isArray(res.value)) return res.value as any[]
+        // getFullList vacío resuelve [], solo rejected es fallo de red
+        if (res.status === 'rejected') fetchFailed.value = true
+        return []
       }
 
-      essence.value = essenceRes.status === 'fulfilled' ? (essenceRes.value as any) : null
-      services.value = servicesRes.status === 'fulfilled' ? (servicesRes.value as any) : null
-      benefits.value = benefitsRes.status === 'fulfilled' ? (benefitsRes.value as any) : null
-      supervision.value = supervisionRes.status === 'fulfilled' ? (supervisionRes.value as any) : null
-      incidents.value = incidentsRes.status === 'fulfilled' ? (incidentsRes.value as any) : null
-      laboratory.value = labRes.status === 'fulfilled' ? (labRes.value as any) : null
-      labAreas.value = labAreasRes.status === 'fulfilled' ? (labAreasRes.value as any) : []
-      labCerts.value = labCertsRes.status === 'fulfilled' ? (labCertsRes.value as any) : null
-      insuranceHeader.value = insuranceHeaderRes.status === 'fulfilled' ? (insuranceHeaderRes.value as any) : null
-      insuranceTypes.value = insuranceTypesRes.status === 'fulfilled' ? (insuranceTypesRes.value as any) : []
-      partners.value = partnersRes.status === 'fulfilled' ? (partnersRes.value as any) : null
-      patronsSection.value = patronsSectionRes.status === 'fulfilled' ? (patronsSectionRes.value as any) : null
-      patronRecords.value = patronsRes.status === 'fulfilled' ? (patronsRes.value as any) : []
-      cta.value = ctaRes.status === 'fulfilled' ? (ctaRes.value as any) : null
+      const bannerList = list(bannersRes)
+      banners.value = bannerList.map(mapBanner)
+
+      essence.value = single(essenceRes)
+      services.value = single(servicesRes)
+      benefits.value = single(benefitsRes)
+      supervision.value = single(supervisionRes)
+      incidents.value = single(incidentsRes)
+      laboratory.value = single(labRes)
+      labAreas.value = list(labAreasRes)
+      labCerts.value = single(labCertsRes)
+      insuranceHeader.value = single(insuranceHeaderRes)
+      insuranceTypes.value = list(insuranceTypesRes)
+      partners.value = single(partnersRes)
+      patronsSection.value = single(patronsSectionRes)
+      patronRecords.value = list(patronsRes)
+      cta.value = single(ctaRes)
+
+      if (fetchFailed.value) error.value = 'Error fetching home content'
 
       // legacy sync for compat components still reading old state
       supervisionRecords.value = supervision.value ? [supervision.value as any] : []
@@ -507,6 +529,7 @@ export const useHomeContent = () => {
       error.value = e?.message || 'Error fetching home content'
     } finally {
       pending.value = false
+      fetched.value = true
     }
   }
 
@@ -536,6 +559,8 @@ export const useHomeContent = () => {
     insuranceRecords,
     pending,
     error,
+    fetched,
+    fetchFailed,
     fetchHomeContent,
     getText,
     getSectionItems,

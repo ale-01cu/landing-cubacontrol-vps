@@ -22,7 +22,7 @@ interface Laboratorio {
   galleryTitle: string
 }
 
-const { getText, getSectionItems } = useHomeContent()
+const { getText, getSectionItems, laboratory, labCerts, fetched, fetchFailed } = useHomeContent()
 
 const laboratorio = computed(() => tm('landing.laboratorio') as Laboratorio)
 
@@ -35,6 +35,8 @@ const labAreasFallback = computed(() => laboratorio.value.areas.map(a => rt(a.ti
 const labAreas = computed(() => {
   const dyn = getSectionItems<any>('lab_areas', [])
   if (dyn.length) return dyn.map((d: any) => d.title)
+  // ponytail: active=false -> vacío; carga/error -> fallback
+  if (fetched.value && !fetchFailed.value) return [] as string[]
   return labAreasFallback.value
 })
 const labCertHeadline = computed(() => getText('laboratorio.certHeadline', rt(laboratorio.value.certHeadline)))
@@ -44,6 +46,8 @@ const labCertificationsFallback = computed(() => laboratorio.value.certification
 const labCertifications = computed(() => {
   const dyn = getSectionItems<any>('lab_certifications', [])
   if (dyn.length) return dyn.map((d: any) => d.title)
+  // ponytail: active=false -> vacío; carga/error -> fallback
+  if (fetched.value && !fetchFailed.value) return [] as string[]
   return labCertificationsFallback.value
 })
 const labGalleryHeadline = computed(() => getText('laboratorio.galleryHeadline', rt(laboratorio.value.galleryHeadline)))
@@ -76,7 +80,18 @@ const areas = computed(() => {
       icon: d.icon || fallbackAreasMeta[i]?.icon || 'i-lucide-flask-conical'
     }))
   }
+  // ponytail: active=false -> vacío; carga/error -> fallback
+  if (fetched.value && !fetchFailed.value) return [] as { title: string, icon: string }[]
   return fallbackAreasMeta
+})
+// ponytail: active=false oculta, carga/error muestra fallback
+const showLab = computed(() => {
+  if (!fetched.value || fetchFailed.value) return true
+  return !!laboratory.value
+})
+const showCert = computed(() => {
+  if (!fetched.value || fetchFailed.value) return true
+  return !!labCerts.value
 })
 
 const images = [
@@ -91,6 +106,7 @@ const images = [
 
 <template>
   <UPageSection
+    v-if="showLab"
     id="laboratorio"
     class="bg-primary/5 rounded-3xl"
   >
@@ -135,6 +151,7 @@ const images = [
   </UPageSection>
 
   <UPageSection
+    v-if="showCert"
     orientation="horizontal"
     reverse
   >

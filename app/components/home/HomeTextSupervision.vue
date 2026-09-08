@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const { getText, supervisionImageUrl } = useHomeContent()
+const { getText, supervision, fetched, fetchFailed, supervisionImageUrl } = useHomeContent()
 
 const supervisionTitle = computed(() => getText('supervision.title', t('landing.supervision.title')))
 const supervisionDescription = computed(() => getText('supervision.description', t('landing.supervision.description')))
@@ -10,10 +10,16 @@ const supervisionObjectiveTitle = computed(() => getText('supervision.objective.
 const supervisionObjectiveDescription = computed(() => getText('supervision.objective.description', t('landing.supervision.objective.description')))
 
 const displayImage = computed(() => supervisionImageUrl.value || '/importancia-supervision.jpg')
+// ponytail: active=false oculta, carga/error muestra fallback
+const isVisible = computed(() => {
+  if (!fetched.value || fetchFailed.value) return true
+  return !!supervision.value
+})
 </script>
 
 <template>
   <UPageSection
+    v-if="isVisible"
     class="bg-primary/5 rounded-3xl"
     orientation="horizontal"
   >

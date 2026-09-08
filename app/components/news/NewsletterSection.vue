@@ -2,13 +2,18 @@
 const { t } = useI18n()
 const toast = useToast()
 const { isAuthenticated, user } = useAuth()
-const { getText } = useHomeContent()
+const { getText, cta, fetched, fetchFailed } = useHomeContent()
 
 const ctaTitle = computed(() => getText('cta.title', t('landing.subscription.title')))
 const ctaDescription = computed(() => getText('cta.description', t('landing.subscription.description')))
 const ctaPlaceholder = computed(() => getText('cta.placeholder', t('landing.subscription.input.placeholder')))
 const ctaButtonLabel = computed(() => getText('cta.button_label', t('landing.subscription.actions.submit.label')))
 const ctaNote = computed(() => getText('cta.note', t('landing.subscription.note')))
+// ponytail: active=false oculta, carga/error muestra fallback
+const isVisible = computed(() => {
+  if (!fetched.value || fetchFailed.value) return true
+  return !!cta.value
+})
 
 const email = ref('')
 const loading = ref(false)
@@ -67,6 +72,7 @@ const subscribe = async () => {
 
 <template>
   <UPageSection
+    v-if="isVisible"
     class="bg-primary-50 rounded-3xl"
     :title="ctaTitle"
     :description="ctaDescription"

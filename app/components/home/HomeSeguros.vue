@@ -18,7 +18,7 @@ interface Seguros {
 }
 
 const { t } = useI18n()
-const { getText, insuranceRecords, getInsuranceImageUrl } = useHomeContent()
+const { getText, insuranceHeader, insuranceRecords, fetched, fetchFailed, getInsuranceImageUrl } = useHomeContent()
 
 const seguros = computed(() => tm('landing.seguros') as Seguros)
 
@@ -52,7 +52,14 @@ const segTypes = computed(() => {
       image: r.image ? getInsuranceImageUrl(r) : (segImages[i] || segImages[0])
     }))
   }
+  // ponytail: active=false -> vacío; carga/error -> fallback
+  if (fetched.value && !fetchFailed.value) return [] as { title: string, description: string, image: string }[]
   return fallbackSegTypes.value
+})
+// ponytail: active=false oculta, carga/error muestra fallback
+const isVisible = computed(() => {
+  if (!fetched.value || fetchFailed.value) return true
+  return !!insuranceHeader.value
 })
 
 const links = computed<ButtonProps[]>(() => [
@@ -67,6 +74,7 @@ const links = computed<ButtonProps[]>(() => [
 
 <template>
   <UPageSection
+    v-if="isVisible"
     id="seguros"
     class="bg-primary/5 rounded-3xl"
   >
