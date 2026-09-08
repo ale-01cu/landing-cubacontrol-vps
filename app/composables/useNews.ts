@@ -33,12 +33,12 @@ export const useNews = () => {
     totalItems: 0
   })
 
-  const fetchNews = async () => {
+  const fetchNews = async (page: number = pagination.value.page) => {
     loading.value = true
     error.value = null
 
     try {
-      const res = await $pb.collection('news').getList(pagination.value.page, pagination.value.perPage, {
+      const res = await $pb.collection('news').getList(page, pagination.value.perPage, {
         sort: 'created',
         expand: 'create_by'
       })

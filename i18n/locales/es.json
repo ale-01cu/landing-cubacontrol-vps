@@ -537,6 +537,9 @@
     "title": "Incidencias",
     "description": "Irregularidades y situaciones detectadas durante las supervisiones de cadena de suministro, tránsito, almacenamiento de mercancías y control de operaciones logísticas."
   },
+  "news": {
+    "empty": "No hay noticias disponibles"
+  },
   "auth": {
     "login": {
       "title": "Iniciar sesión",

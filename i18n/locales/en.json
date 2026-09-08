@@ -541,7 +541,8 @@
   },
   "news": {
     "title": "Noticias",
-    "description": "Actualidad, avisos y novedades"
+    "description": "Actualidad, avisos y novedades",
+    "empty": "No news available"
   },
   "auth": {
     "login": {

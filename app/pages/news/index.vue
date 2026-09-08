@@ -84,6 +84,12 @@ const totalPages = computed(() =>
 )
 
 const { fetchNews, newsList, loading, pagination, getNewsImage } = useNews()
+
+const handlePageChange = async (newPage: number) => {
+  page.value = newPage
+  await fetchNews(newPage)
+}
+
 onMounted(async () => {
   await fetchNews()
 })
@@ -105,9 +111,9 @@ onMounted(async () => {
         </div>
 
         <!-- Navegación + Search -->
-        <div class="flex flex-col md:flex-row items-center justify-end gap-3">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-3">
           <!-- Search -->
-          <div class="w-full md:w-72">
+          <div class="w-full md:w-72 flex justify-center">
             <UInput
               v-model="search"
               placeholder="Buscar noticias..."
@@ -129,7 +135,33 @@ onMounted(async () => {
     <!--    </div> -->
 
     <!-- ================= NEWS LIST ================= -->
-    <section class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div
+      v-if="loading"
+      class="flex justify-center py-20"
+    >
+      <UIcon
+        name="i-lucide-loader-2"
+        class="w-8 h-8 animate-spin text-primary"
+      />
+    </div>
+
+    <div
+      v-else-if="newsList.length === 0"
+      class="text-center py-20"
+    >
+      <UIcon
+        name="i-lucide-newspaper"
+        class="w-16 h-16 text-muted mx-auto mb-4"
+      />
+      <p class="text-muted text-lg">
+        {{ t('news.empty') }}
+      </p>
+    </div>
+
+    <section
+      v-else
+      class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+    >
       <article
         v-for="item in newsList"
         :key="item.id"
@@ -183,12 +215,16 @@ onMounted(async () => {
     </section>
 
     <!-- ================= PAGINATION ================= -->
-    <div class="flex justify-center pt-6">
+    <div
+      v-if="pagination.totalPages > 1"
+      class="flex justify-center pt-6"
+    >
       <UPagination
         v-model="page"
-        :total="newsList.length"
-        :page-count="pagination.page"
+        :total="pagination.totalItems"
+        :page-count="pagination.perPage"
         :items-per-page="pagination.perPage"
+        @update:model-value="handlePageChange"
       />
     </div>
   </UContainer>
