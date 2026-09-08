@@ -51,11 +51,15 @@ const isVisible = computed(() => {
       </p>
     </div>
 
-    <div class="flex flex-col sm:flex-row gap-6 w-full">
+    <div
+      class="flex flex-col sm:flex-row gap-6 w-full"
+      :class="{ 'justify-center': displayPartners.length === 1 }"
+    >
       <div
         v-for="img in displayPartners"
         :key="img.alt + img.src"
-        class="rounded-2xl lg:w-1/2 overflow-hidden bg-white/80"
+        class="rounded-2xl overflow-hidden bg-white/80"
+        :class="displayPartners.length > 1 ? 'lg:w-1/2' : 'w-full'"
       >
         <a
           v-if="img.href"
