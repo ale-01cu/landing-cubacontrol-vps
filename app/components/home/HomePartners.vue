@@ -1,38 +1,23 @@
 <script setup lang="ts">
 const { t } = useI18n()
-const { partners, fetched, fetchFailed, getPartnersImageUrls, getText } = useHomeContent()
-
-const fallbackPartnerImages = [
-  {
-    src: '/partners/partners.webp',
-    alt: 'Partners'
-  },
-  {
-    src: '/partners/ops.webp',
-    alt: 'OPS'
-  }
-]
+const { getPartnersImageUrls, getText } = useHomeContent()
 
 const partnersTitle = computed(() => getText('partners.title', t('landing.partners.title')))
 const partnersDesc = computed(() => getText('partners.description', t('landing.partners.description')))
 
+// fallback: si la API no devuelve imágenes, se muestra partners.webp
+const fallbackPartner = [{ src: '/partners/partners.webp', alt: 'Partners', href: null as string | null }]
+
+const isVisible = true
+
 const displayPartners = computed(() => {
   const urls = getPartnersImageUrls.value
-  if (urls.length) {
-    return urls.map((src, i) => ({
-      src,
-      alt: `Partner ${i + 1}`,
-      href: null as string | null
-    }))
-  }
-  // ponytail: active=false -> vacío; carga/error -> fallback
-  if (fetched.value && !fetchFailed.value) return [] as { src: string, alt: string, href: string | null }[]
-  return fallbackPartnerImages.map(p => ({ ...p, href: null as string | null }))
-})
-// ponytail: active=false oculta, carga/error muestra fallback
-const isVisible = computed(() => {
-  if (!fetched.value || fetchFailed.value) return true
-  return !!partners.value
+  if (!urls.length) return fallbackPartner
+  return urls.map((src, i) => ({
+    src,
+    alt: `Partner ${i + 1}`,
+    href: null as string | null
+  }))
 })
 </script>
 

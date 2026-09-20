@@ -4,47 +4,21 @@ interface IEntity {
   logo: string
 }
 const { t } = useI18n()
-const { getText, patronsSection, patronRecords, fetched, fetchFailed, getPatronLogoUrl } = useHomeContent()
-
-const fallbackEntities: IEntity[] = [
-  { name: 'ONARC', logo: 'patrons/logo_onarc.png' },
-  { name: 'ONN', logo: 'patrons/onn.jpg' },
-  { name: 'Ministerio de Finanzas y Precios', logo: 'patrons/mfp.jpg' },
-  { name: 'OSDE CAUDAL', logo: 'patrons/grupo-caudal.jpg' },
-  { name: 'MITRANS', logo: 'patrons/mitrans.jpg' },
-  { name: 'ESEN', logo: 'patrons/esen.jpg' },
-  { name: 'ESICUBA', logo: 'patrons/esicuba.jpg' },
-  { name: 'INTERMAR', logo: 'patrons/intermar.jpg' },
-  { name: 'GECOME', logo: 'patrons/gecome.png' },
-  { name: 'ADUANA', logo: 'patrons/aduana.webp' },
-  { name: 'INTERAUDIT', logo: 'patrons/interauditlogo.webp' },
-  { name: 'SUPERINTENDENCIA', logo: 'patrons/SUPERINTENDENCIA.webp' },
-  { name: 'ONAT', logo: 'patrons/onatlogo.webp' },
-  { name: 'CONAS', logo: 'patrons/conaslogo.webp' },
-  { name: 'CANEC', logo: 'patrons/caneclogo.webp' },
-  { name: 'CUBA ASISTUR', logo: 'patrons/asisturlogo.webp' }
-]
+const { getText, patronRecords, getPatronLogoUrl } = useHomeContent()
 
 const trustTitle = computed(() => getText('trust.title', t('landing.trust.title')))
 const trustDescription = computed(() => getText('trust.description', t('landing.trust.description')))
 
-// ponytail: active=false en PB oculta; carga/error muestra fallback
-const isVisible = computed(() => {
-  if (!fetched.value || fetchFailed.value) return true
-  return !!patronsSection.value
-})
+// sin fallback: si no viene nada de la API, no se muestra nada
+const isVisible = computed(() => patronRecords.value.length > 0)
 
 const displayEntities = computed(() => {
-  if (patronRecords.value.length) {
-    return patronRecords.value.map(p => ({
-      name: p.name,
-      logo: getPatronLogoUrl(p) || fallbackEntities[0]!.logo,
-      href: p.website_url || null
-    }))
-  }
-  // ponytail: si PB ya cargó y no hay patrons activos, grid vacío (no fallback)
-  if (fetched.value && !fetchFailed.value) return [] as { name: string, logo: string, href: string | null }[]
-  return fallbackEntities.map(e => ({ ...e, href: null as string | null }))
+  if (!patronRecords.value.length) return [] as { name: string, logo: string, href: string | null }[]
+  return patronRecords.value.map(p => ({
+    name: p.name,
+    logo: getPatronLogoUrl(p) || '',
+    href: p.website_url || null
+  }))
 })
 </script>
 
