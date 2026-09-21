@@ -648,7 +648,7 @@ async function seedInsuranceTypes(pb: PocketBase, locale: string, localeData: Lo
 async function seedPartners(pb: PocketBase, locale: string, localeData: LocaleData): Promise<void> {
   console.log(`\n--- Seeding home_partners for ${locale} ---`)
   const partners = localeData?.landing?.partners ?? {}
-  const images = await toFiles(['/partners/partners.webp', '/partners/ops.webp'])
+  const images = await toFiles(['/partners/partners_new.webp', '/partners/ops.webp'])
   const payload = cleanPayload({
     locale,
     section_title: partners?.title,

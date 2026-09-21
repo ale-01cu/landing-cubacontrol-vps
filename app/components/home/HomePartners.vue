@@ -6,7 +6,7 @@ const partnersTitle = computed(() => getText('partners.title', t('landing.partne
 const partnersDesc = computed(() => getText('partners.description', t('landing.partners.description')))
 
 // fallback: si la API no devuelve imágenes, se muestra partners.webp
-const fallbackPartner = [{ src: '/partners/partners.webp', alt: 'Partners', href: null as string | null }]
+const fallbackPartner = [{ src: '/partners/partners_new.webp', alt: 'Partners', href: null as string | null }]
 
 const isVisible = true
 
