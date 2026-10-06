@@ -20,7 +20,12 @@
     "subscribeRequired": "Necesitas suscribirte para descargar boletines",
     "loginRequired": "Inicia sesión para descargar boletines",
     "downloadError": "Error al descargar el archivo",
-    "loginToSubscribe": "Inicia sesión para suscribirte a nuestros boletines y acceder a las descargas."
+    "loginToSubscribe": "Inicia sesión para suscribirte a nuestros boletines y acceder a las descargas.",
+    "modalSubscribeTitle": "Suscripción requerida",
+    "modalSubscribeDesc": "Para descargar este boletín es necesario estar suscrito al servicio informativo de Cubacontrol.",
+    "modalSubscribeAction": "Suscribirme y descargar",
+    "modalLoginAction": "Iniciar sesión para suscribirme",
+    "modalCancel": "Cancelar"
   },
   "form": {
     "service": {

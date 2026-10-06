@@ -20,7 +20,12 @@
     "subscribeRequired": "You need a subscription to download bulletins",
     "loginRequired": "Sign in to download bulletins",
     "downloadError": "Error downloading the file",
-    "loginToSubscribe": "Sign in to subscribe to our bulletins and access downloads."
+    "loginToSubscribe": "Sign in to subscribe to our bulletins and access downloads.",
+    "modalSubscribeTitle": "Subscription required",
+    "modalSubscribeDesc": "To download this bulletin, you need to be subscribed to the Cubacontrol information service.",
+    "modalSubscribeAction": "Subscribe & Download",
+    "modalLoginAction": "Sign in to subscribe",
+    "modalCancel": "Cancel"
   },
   "form": {
     "service": {
