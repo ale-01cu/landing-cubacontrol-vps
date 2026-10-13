@@ -7,7 +7,7 @@ const { locale } = useI18n()
 
 const baseUrl = 'https://cubacontrol-sa.web.app'
 
-const { fetchNewsById, getNewsImage } = useNews()
+const { fetchNewsById, getNewsImage, getNewsImages } = useNews()
 const { createComment } = useComments()
 
 const article = ref<INews | null>(null)
@@ -111,6 +111,11 @@ const articleImage = computed(() => {
   return getNewsImage(article.value)
 })
 
+const articleImages = computed(() => {
+  if (!article.value) return []
+  return getNewsImages(article.value)
+})
+
 onMounted(async () => {
   window.addEventListener('keydown', handleKeyDown)
 
@@ -184,6 +189,20 @@ onUnmounted(() => {
           :src="articleImage"
           class="w-full h-[260px] md:h-[420px] object-cover"
           placeholder
+          format="webp"
+        />
+      </div>
+
+      <div
+        v-if="articleImages.length"
+        class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-8"
+      >
+        <NuxtImg
+          v-for="(img, i) in articleImages"
+          :key="i"
+          :src="img"
+          class="w-full h-40 md:h-52 object-cover rounded-xl"
+          loading="lazy"
           format="webp"
         />
       </div>

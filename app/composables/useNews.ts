@@ -5,7 +5,8 @@ export interface INews {
   title: string
   description: string
   text: string
-  img: string
+  cover: string
+  images: string[]
   create_by: string
   author: string
   created: string
@@ -69,9 +70,15 @@ export const useNews = () => {
     return pagination.value.page < pagination.value.totalPages
   })
   const getNewsImage = (record: INews) => {
-    if (!record.img) return ''
+    if (!record.cover) return ''
 
-    return $pb.files.getURL(record, record.img)
+    return $pb.files.getURL(record, record.cover)
+  }
+
+  const getNewsImages = (record: INews) => {
+    if (!record.images?.length) return []
+
+    return record.images.map(f => $pb.files.getURL(record, f))
   }
 
   const fetchNewsById = async (id: string) => {
@@ -91,6 +98,7 @@ export const useNews = () => {
 
   return {
     getNewsImage,
+    getNewsImages,
     newsList,
     loading,
     error,
