@@ -23,7 +23,8 @@ export const useNews = () => {
   const { $pb } = useNuxtApp()
 
   const newsList = ref<INews[]>([])
-  const loading = ref(false)
+  // ponytail: arranca en true para no flash del estado vacío antes del primer fetch
+  const loading = ref(true)
   const error = ref<string | null>(null)
 
   const pagination = ref({
