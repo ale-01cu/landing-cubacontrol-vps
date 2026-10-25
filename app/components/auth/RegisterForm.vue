@@ -106,16 +106,19 @@
         {{ t('auth.register.submit') }}
       </UButton>
 
+      <!-- 🇨🇺 Login con Google deshabilitado: no funciona en Cuba
       <p class="text-md text-center text-gray-600">
         {{ t('auth.register.continueWith') }}
       </p>
       <IconLoginGoogle />
+      -->
     </form>
   </UCard>
 </template>
 
 <script setup lang="ts">
-import IconLoginGoogle from '~/components/auth/IconLoginGoogle.vue'
+// 🇨🇺 Login con Google deshabilitado: no funciona en Cuba
+// import IconLoginGoogle from '~/components/auth/IconLoginGoogle.vue'
 
 const { t } = useI18n()
 const { register, loading, error } = useAuth()

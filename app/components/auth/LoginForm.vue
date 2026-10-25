@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import * as z from 'zod'
 import type { FormSubmitEvent, AuthFormField } from '@nuxt/ui'
-import IconLoginGoogle from '~/components/auth/IconLoginGoogle.vue'
+// 🇨🇺 Login con Google deshabilitado: no funciona en Cuba
+// import IconLoginGoogle from '~/components/auth/IconLoginGoogle.vue'
 
 definePageMeta({
   title: 'Login'
@@ -61,10 +62,12 @@ async function onSubmit(payload: FormSubmitEvent<Schema>) {
         }"
         @submit="onSubmit"
       >
+        <!-- 🇨🇺 Login con Google deshabilitado: no funciona en Cuba
         <template #providers>
           <IconLoginGoogle />
           <USeparator :label="t('auth.login.providers')" />
         </template>
+        -->
         <template #footer>
           <p
             class="text-sm text-gray-500 hover:cursor-pointer"
